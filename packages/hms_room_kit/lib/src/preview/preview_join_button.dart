@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
@@ -68,7 +69,7 @@ class PreviewJoinButton extends StatelessWidget {
               child: HMSTitleText(
                 text: HMSRoomLayout
                         .data?[0].screens?.preview?.joinForm?.joinBtnLabel ??
-                    'Join Now',
+                    t.join_now,
                 textColor: isEmpty
                     ? HMSThemeColors.onPrimaryLowEmphasis
                     : HMSThemeColors.onPrimaryHighEmphasis,

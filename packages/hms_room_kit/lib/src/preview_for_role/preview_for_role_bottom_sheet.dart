@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -199,7 +200,7 @@ class _PreviewForRoleBottomSheetState extends State<PreviewForRoleBottomSheet> {
                       height: 48,
                       child: Center(
                         child: HMSTitleText(
-                            text: "Join Now",
+                            text: t.join_now,
                             textColor: HMSThemeColors.onPrimaryHighEmphasis),
                       ),
                     )),
