@@ -72,11 +72,13 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.languageCode == 'nl') {
-        LocaleSettings.setLocale(AppLocale.nl);
-      } else {
-        LocaleSettings.setLocale(AppLocale.en);
-      }
+      setState(() {
+        if (widget.languageCode == 'nl') {
+          LocaleSettings.setLocale(AppLocale.nl);
+        } else {
+          LocaleSettings.setLocale(AppLocale.en);
+        }
+      });
     });
     super.initState();
   }
