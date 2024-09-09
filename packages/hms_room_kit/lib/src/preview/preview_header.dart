@@ -7,6 +7,7 @@ import 'dart:io';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
@@ -80,9 +81,7 @@ class PreviewHeader extends StatelessWidget {
               height: 16,
             ),
             HMSTitleText(
-                text: HMSRoomLayout.roleLayoutData?.screens?.preview
-                        ?.previewHeader?.title ??
-                    "Get Started",
+                text: t.let_get_started,
                 fontSize: 24,
                 lineHeight: 32,
                 textColor: HMSThemeColors.onSurfaceHighEmphasis),

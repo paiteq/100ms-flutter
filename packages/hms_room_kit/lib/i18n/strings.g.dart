@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 2 (1 per locale)
+/// Strings: 4 (2 per locale)
 ///
-/// Built on 2024-09-06 at 18:06 UTC
+/// Built on 2024-09-09 at 06:44 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,7 +148,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	String get join_now => 'Join now';
+	String get join_now => 'Joinn now';
+	String get let_get_started => 'Let\'s Get Started.......';
 }
 
 // Path: <root>
@@ -176,6 +177,7 @@ class _StringsNl implements Translations {
 
 	// Translations
 	@override String get join_now => 'Sluit je nu aan';
+	@override String get let_get_started => 'Let\'s Get Started in dutch.......';
 }
 
 /// Flat map(s) containing all translations.
@@ -184,7 +186,8 @@ class _StringsNl implements Translations {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'join_now': return 'Join now';
+			case 'join_now': return 'Joinn now';
+			case 'let_get_started': return 'Let\'s Get Started.......';
 			default: return null;
 		}
 	}
@@ -194,6 +197,7 @@ extension on _StringsNl {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'join_now': return 'Sluit je nu aan';
+			case 'let_get_started': return 'Let\'s Get Started in dutch.......';
 			default: return null;
 		}
 	}
