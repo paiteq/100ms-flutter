@@ -72,28 +72,28 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      setState(() {
-        if (widget.languageCode == 'nl') {
-          LocaleSettings.setLocale(AppLocale.nl);
-        } else {
-          LocaleSettings.setLocale(AppLocale.en);
-        }
-      });
+      if (widget.languageCode == 'nl') {
+        LocaleSettings.setLocale(AppLocale.nl);
+      } else {
+        LocaleSettings.setLocale(AppLocale.en);
+      }
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      locale: Locale(widget.languageCode ?? 'nl'),
-      supportedLocales: AppLocaleUtils.supportedLocales,
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      builder: (context, child) => ScreenController(
-        roomCode: widget.roomCode,
-        authToken: widget.authToken,
-        options: widget.options,
-        onLeave: widget.onLeave,
+    return TranslationProvider(
+      child: MaterialApp(
+        locale: TranslationProvider.of(context).locale.flutterLocale,
+        supportedLocales: AppLocaleUtils.supportedLocales,
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
+        builder: (context, child) => ScreenController(
+          roomCode: widget.roomCode,
+          authToken: widget.authToken,
+          options: widget.options,
+          onLeave: widget.onLeave,
+        ),
       ),
     );
   }
