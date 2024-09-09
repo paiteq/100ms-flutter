@@ -1,5 +1,7 @@
 library;
 
+import 'package:flutter/material.dart';
+
 ///Package imports
 import 'package:flutter/widgets.dart';
 
@@ -7,6 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:hms_room_kit/hms_room_kit.dart';
 import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/screen_controller.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 ///[HMSPrebuilt] is the main widget that is used to render the prebuilt
 ///It takes following parameters:
@@ -69,7 +72,7 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.languageCode == 'nl' && mounted) {
+      if (widget.languageCode == 'nl') {
         LocaleSettings.setLocale(AppLocale.nl);
       } else {
         LocaleSettings.setLocale(AppLocale.en);
@@ -80,11 +83,16 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenController(
-      roomCode: widget.roomCode,
-      authToken: widget.authToken,
-      options: widget.options,
-      onLeave: widget.onLeave,
+    return MaterialApp(
+      locale: Locale(widget.languageCode ?? 'nl'),
+      supportedLocales: AppLocaleUtils.supportedLocales,
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      builder: (context, child) => ScreenController(
+        roomCode: widget.roomCode,
+        authToken: widget.authToken,
+        options: widget.options,
+        onLeave: widget.onLeave,
+      ),
     );
   }
 }
