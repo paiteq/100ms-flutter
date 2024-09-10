@@ -72,32 +72,26 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
   ///The [widget.options] are optional and are used to customize the prebuilt
   ///The [widget.onLeave] is the callback for the leave room button
 
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.languageCode == 'nl') {
-        LocaleSettings.setLocale(AppLocale.nl);
-      } else {
-        LocaleSettings.setLocale(AppLocale.en);
-      }
-    });
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   WidgetsBinding.instance.addPostFrameCallback((_) {
+  //     if (widget.languageCode == 'nl') {
+  //       LocaleSettings.setLocale(AppLocale.nl);
+  //     } else {
+  //       LocaleSettings.setLocale(AppLocale.en);
+  //     }
+  //   });
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      locale: Locale(widget.languageCode ?? 'nl'),
-      supportedLocales: AppLocaleUtils.supportedLocales,
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      builder: (context, child) => ScreenController(
-        roomCode: widget.roomCode,
-        authToken: widget.authToken,
-        options: widget.options,
-        onLeave: widget.onLeave,
-        onRoomEndCrossTap: widget.onRoomEndCrossTap,
-      ),
+    return ScreenController(
+      roomCode: widget.roomCode,
+      authToken: widget.authToken,
+      options: widget.options,
+      onLeave: widget.onLeave,
+      onRoomEndCrossTap: widget.onRoomEndCrossTap,
     );
   }
 }
