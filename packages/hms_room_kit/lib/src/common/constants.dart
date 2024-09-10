@@ -51,6 +51,6 @@ class Constant {
   ///[Constant.onLeave] is the function that you wish to execute while leaving the room
   static Function? onLeave;
 
-  ///[Constant.onRoomEndCrossTap] is the function that you wish to execute while leaving room with cross icon in end room page
-  static Function? onRoomEndCrossTap;
+  // ///[Constant.onRoomEndCrossTap] is the function that you wish to execute while leaving room with cross icon in end room page
+  // static Function? onRoomEndCrossTap;
 }
