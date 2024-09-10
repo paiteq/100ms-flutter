@@ -87,6 +87,7 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       locale: Locale(widget.languageCode ?? 'nl'),
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
