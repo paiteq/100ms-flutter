@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 4 (2 per locale)
 ///
-/// Built on 2024-09-09 at 11:06 UTC
+/// Built on 2024-09-10 at 11:59 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,7 +149,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	String get join_now => 'Joinn now';
-	String get let_get_started => 'Let\'s Get Started.......';
+	String get let_get_started => 'Get Started';
 }
 
 // Path: <root>
@@ -177,7 +177,7 @@ class _StringsNl implements Translations {
 
 	// Translations
 	@override String get join_now => 'Sluit je nu aan';
-	@override String get let_get_started => 'Let\'s Get Started in dutch.......';
+	@override String get let_get_started => 'Get Started';
 }
 
 /// Flat map(s) containing all translations.
@@ -187,7 +187,7 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'join_now': return 'Joinn now';
-			case 'let_get_started': return 'Let\'s Get Started.......';
+			case 'let_get_started': return 'Get Started';
 			default: return null;
 		}
 	}
@@ -197,7 +197,7 @@ extension on _StringsNl {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'join_now': return 'Sluit je nu aan';
-			case 'let_get_started': return 'Let\'s Get Started in dutch.......';
+			case 'let_get_started': return 'Get Started';
 			default: return null;
 		}
 	}

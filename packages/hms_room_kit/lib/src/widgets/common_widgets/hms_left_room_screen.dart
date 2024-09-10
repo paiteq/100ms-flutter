@@ -13,10 +13,11 @@ import 'package:hms_room_kit/src/widgets/common_widgets/hms_subheading_text.dart
 class HMSLeftRoomScreen extends StatelessWidget {
   final bool isEndRoomCalled;
   final bool doesRoleHasStreamPermission;
-  const HMSLeftRoomScreen(
-      {super.key,
-      this.isEndRoomCalled = false,
-      this.doesRoleHasStreamPermission = false});
+  const HMSLeftRoomScreen({
+    super.key,
+    this.isEndRoomCalled = false,
+    this.doesRoleHasStreamPermission = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +35,12 @@ class HMSLeftRoomScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
-                    onTap: () => {
-                      ///Here we reset the layout colors and pop the leave screen
-                      HMSThemeColors.resetLayoutColors(),
-                      Navigator.pop(context)
-                    },
+                    onTap: () => Constant.onRoomEndCrossTap,
+                    // onTap: () => {
+                    //   ///Here we reset the layout colors and pop the leave screen
+                    //   HMSThemeColors.resetLayoutColors(),
+                    //   Navigator.pop(context),
+                    // },
                     child: CircleAvatar(
                       radius: 24,
                       backgroundColor: HMSThemeColors.surfaceDefault,

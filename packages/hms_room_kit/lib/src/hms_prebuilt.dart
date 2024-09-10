@@ -36,15 +36,18 @@ class HMSPrebuilt extends StatefulWidget {
   ///This function can be passed if you wish to perform some specific actions
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
+  final Function? onRoomEndCrossTap;
 
   ///The key for the widget
-  HMSPrebuilt(
-      {super.key,
-      required this.roomCode,
-      this.options,
-      this.onLeave,
-      this.authToken,
-      this.languageCode}) {
+  HMSPrebuilt({
+    super.key,
+    required this.roomCode,
+    this.options,
+    this.onLeave,
+    this.authToken,
+    this.languageCode,
+    this.onRoomEndCrossTap,
+  }) {
     if (roomCode == null && authToken == null) {
       throw ArgumentError.notNull(
           "At least one parameter roomCode or authToken must be provided.");
@@ -83,17 +86,16 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
 
   @override
   Widget build(BuildContext context) {
-    return TranslationProvider(
-      child: MaterialApp(
-        locale: TranslationProvider.of(context).locale.flutterLocale,
-        supportedLocales: AppLocaleUtils.supportedLocales,
-        localizationsDelegates: GlobalMaterialLocalizations.delegates,
-        builder: (context, child) => ScreenController(
-          roomCode: widget.roomCode,
-          authToken: widget.authToken,
-          options: widget.options,
-          onLeave: widget.onLeave,
-        ),
+    return MaterialApp(
+      locale: Locale(widget.languageCode ?? 'nl'),
+      supportedLocales: AppLocaleUtils.supportedLocales,
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      builder: (context, child) => ScreenController(
+        roomCode: widget.roomCode,
+        authToken: widget.authToken,
+        options: widget.options,
+        onLeave: widget.onLeave,
+        onRoomEndCrossTap: widget.onRoomEndCrossTap,
       ),
     );
   }
