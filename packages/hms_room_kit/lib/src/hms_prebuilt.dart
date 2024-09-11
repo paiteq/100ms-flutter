@@ -36,7 +36,7 @@ class HMSPrebuilt extends StatefulWidget {
   ///This function can be passed if you wish to perform some specific actions
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
-  // final Function? onRoomEndCrossTap;
+  final Function? onRoomEndCrossTap;
 
   ///The key for the widget
   HMSPrebuilt({
@@ -46,7 +46,7 @@ class HMSPrebuilt extends StatefulWidget {
     this.onLeave,
     this.authToken,
     this.languageCode,
-    // this.onRoomEndCrossTap,
+    this.onRoomEndCrossTap,
   }) {
     if (roomCode == null && authToken == null) {
       throw ArgumentError.notNull(
@@ -91,7 +91,7 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
       authToken: widget.authToken,
       options: widget.options,
       onLeave: widget.onLeave,
-      // onRoomEndCrossTap: widget.onRoomEndCrossTap,
+      onRoomEndCrossTap: widget.onRoomEndCrossTap,
     );
   }
 }

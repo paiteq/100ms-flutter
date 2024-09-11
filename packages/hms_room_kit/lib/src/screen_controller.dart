@@ -32,7 +32,7 @@ class ScreenController extends StatefulWidget {
   ///This function can be passed if you wish to perform some specific actions
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
-  // final Function? onRoomEndCrossTap;
+  final Function? onRoomEndCrossTap;
 
   const ScreenController({
     super.key,
@@ -40,7 +40,7 @@ class ScreenController extends StatefulWidget {
     this.options,
     this.onLeave,
     this.authToken,
-    // this.onRoomEndCrossTap,
+    this.onRoomEndCrossTap,
   });
   @override
   State<ScreenController> createState() => _ScreenControllerState();
@@ -62,7 +62,7 @@ class _ScreenControllerState extends State<ScreenController> {
     Constant.roomCode = widget.roomCode;
     Constant.authToken = widget.authToken;
     Constant.onLeave = widget.onLeave;
-    // Constant.onRoomEndCrossTap = widget.onRoomEndCrossTap;
+    Constant.onRoomEndCrossTap = widget.onRoomEndCrossTap;
 
     ///Here we set the endPoints if it's non-null
     if (widget.options?.endPoints != null) {
