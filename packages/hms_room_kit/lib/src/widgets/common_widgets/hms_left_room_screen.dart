@@ -35,13 +35,11 @@ class HMSLeftRoomScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   InkWell(
-                    onTap: () =>
-                        Constant.onRoomEndCrossTap ?? Navigator.pop(context),
-                    // onTap: () => {
-                    //   ///Here we reset the layout colors and pop the leave screen
-                    //   HMSThemeColors.resetLayoutColors(),
-                    //   Navigator.pop(context),
-                    // },
+                    onTap: () => {
+                      ///Here we reset the layout colors and pop the leave screen
+                      HMSThemeColors.resetLayoutColors(),
+                      Navigator.pop(context),
+                    },
                     child: CircleAvatar(
                       radius: 24,
                       backgroundColor: HMSThemeColors.surfaceDefault,
