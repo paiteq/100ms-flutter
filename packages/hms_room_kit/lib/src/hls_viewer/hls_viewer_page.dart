@@ -5,6 +5,7 @@ import 'dart:math';
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/src/common/constants.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -91,11 +92,12 @@ class _HLSViewerPageState extends State<HLSViewerPage> {
           builder: (_, failureData, __) {
             if (failureData.item1) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => HMSLeftRoomScreen(
-                          isEndRoomCalled: failureData.item3,
-                          doesRoleHasStreamPermission: failureData.item4,
-                        )));
+                Constant.router?.routerDelegate.navigatorKey.currentState
+                    ?.push(MaterialPageRoute(
+                        builder: (context) => HMSLeftRoomScreen(
+                              isEndRoomCalled: failureData.item3,
+                              doesRoleHasStreamPermission: failureData.item4,
+                            )));
               });
             }
             return Selector<MeetingStore, bool>(

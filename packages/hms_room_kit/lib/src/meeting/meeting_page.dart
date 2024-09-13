@@ -95,11 +95,12 @@ class _MeetingPageState extends State<MeetingPage> {
             if (failureErrors.item1) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 context.read<MeetingStore>().removeAllBottomSheets();
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => HMSLeftRoomScreen(
-                          isEndRoomCalled: failureErrors.item3,
-                          doesRoleHasStreamPermission: failureErrors.item4,
-                        )));
+                Constant.router?.routerDelegate.navigatorKey.currentState
+                    ?.push(MaterialPageRoute(
+                        builder: (context) => HMSLeftRoomScreen(
+                              isEndRoomCalled: failureErrors.item3,
+                              doesRoleHasStreamPermission: failureErrors.item4,
+                            )));
               });
             }
             return Selector<MeetingStore, bool>(
