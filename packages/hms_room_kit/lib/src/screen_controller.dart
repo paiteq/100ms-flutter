@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
 import 'package:hms_room_kit/src/preview_meeting_flow.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -34,6 +35,7 @@ class ScreenController extends StatefulWidget {
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
   final GoRouter? router;
+  final String? languageCode;
 
   const ScreenController({
     super.key,
@@ -42,6 +44,7 @@ class ScreenController extends StatefulWidget {
     this.onLeave,
     this.authToken,
     this.router,
+    this.languageCode,
   });
   @override
   State<ScreenController> createState() => _ScreenControllerState();
@@ -73,6 +76,7 @@ class _ScreenControllerState extends State<ScreenController> {
       Constant.tokenEndPoint = null;
       Constant.layoutAPIEndPoint = null;
     }
+    _setAppLanguage();
     _checkPermissions();
   }
 
@@ -99,6 +103,18 @@ class _ScreenControllerState extends State<ScreenController> {
     } else {
       setState(() {
         isLoading = false;
+      });
+    }
+  }
+
+  void _setAppLanguage() {
+    if (widget.languageCode == 'nl') {
+      setState(() {
+        LocaleSettings.setLocale(AppLocale.nl);
+      });
+    } else {
+      setState(() {
+        LocaleSettings.setLocale(AppLocale.en);
       });
     }
   }
