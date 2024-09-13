@@ -67,9 +67,7 @@ class PreviewJoinButton extends StatelessWidget {
             )
           : Center(
               child: HMSTitleText(
-                text: HMSRoomLayout
-                        .data?[0].screens?.preview?.joinForm?.joinBtnLabel ??
-                    t.join_now,
+                text: t.join_now,
                 textColor: isEmpty
                     ? HMSThemeColors.onPrimaryLowEmphasis
                     : HMSThemeColors.onPrimaryHighEmphasis,

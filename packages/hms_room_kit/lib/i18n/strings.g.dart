@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 4 (2 per locale)
 ///
-/// Built on 2024-09-10 at 11:59 UTC
+/// Built on 2024-09-13 at 12:54 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,8 +148,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	String get join_now => 'Joinn now';
-	String get let_get_started => 'Get Started';
+	String get join_now => 'Join now';
+	String get let_get_started => 'Aan de slag';
 }
 
 // Path: <root>
@@ -186,8 +186,8 @@ class _StringsNl implements Translations {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'join_now': return 'Joinn now';
-			case 'let_get_started': return 'Get Started';
+			case 'join_now': return 'Join now';
+			case 'let_get_started': return 'Aan de slag';
 			default: return null;
 		}
 	}

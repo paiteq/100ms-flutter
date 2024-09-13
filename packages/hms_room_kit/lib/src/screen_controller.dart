@@ -76,7 +76,6 @@ class _ScreenControllerState extends State<ScreenController> {
       Constant.tokenEndPoint = null;
       Constant.layoutAPIEndPoint = null;
     }
-    _setAppLanguage();
     _checkPermissions();
   }
 
@@ -103,18 +102,6 @@ class _ScreenControllerState extends State<ScreenController> {
     } else {
       setState(() {
         isLoading = false;
-      });
-    }
-  }
-
-  void _setAppLanguage() {
-    if (widget.languageCode == 'nl') {
-      setState(() {
-        LocaleSettings.setLocale(AppLocale.nl);
-      });
-    } else {
-      setState(() {
-        LocaleSettings.setLocale(AppLocale.en);
       });
     }
   }
@@ -206,24 +193,27 @@ class _ScreenControllerState extends State<ScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: (isLoading)
-          ? Center(
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: HMSThemeColors.primaryDefault,
-              ),
-            )
-          : isPermissionGranted
-              ? PreviewMeetingFlow(
-                  prebuiltOptions: widget.options,
-                  hmsSDKInteractor: _hmsSDKInteractor,
-                  tokenData: tokenData,
-                  router: widget.router,
-                )
-              : PreviewPermissions(
-                  options: widget.options,
-                  callback: _isPermissionGrantedCallback),
+    return MaterialApp(
+      locale: Locale(widget.languageCode ?? 'nl'),
+      builder: (context, child) => Scaffold(
+        body: (isLoading)
+            ? Center(
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: HMSThemeColors.primaryDefault,
+                ),
+              )
+            : isPermissionGranted
+                ? PreviewMeetingFlow(
+                    prebuiltOptions: widget.options,
+                    hmsSDKInteractor: _hmsSDKInteractor,
+                    tokenData: tokenData,
+                    router: widget.router,
+                  )
+                : PreviewPermissions(
+                    options: widget.options,
+                    callback: _isPermissionGrantedCallback),
+      ),
     );
   }
 }
