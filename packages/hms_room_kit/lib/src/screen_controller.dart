@@ -66,6 +66,7 @@ class _ScreenControllerState extends State<ScreenController> {
     Constant.authToken = widget.authToken;
     Constant.onLeave = widget.onLeave;
     Constant.onRoomEndCrossTap = widget.onRoomEndCrossTap;
+    Constant.router = widget.router;
 
     ///Here we set the endPoints if it's non-null
     if (widget.options?.endPoints != null) {

@@ -123,9 +123,9 @@ class HMSLeftRoomScreen extends StatelessWidget {
                           ))),
                       onPressed: () => {
                             HMSThemeColors.resetLayoutColors(),
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
+                            Constant.router?.routerDelegate.navigatorKey
+                                .currentState
+                                ?.push(MaterialPageRoute(
                                     builder: (_) => HMSPrebuilt(
                                           roomCode: Constant.roomCode,
                                           authToken: Constant.authToken,

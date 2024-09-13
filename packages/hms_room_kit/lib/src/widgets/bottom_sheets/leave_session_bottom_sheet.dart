@@ -65,7 +65,7 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                       "Others will continue after you leave. You can join the session again.",
                   subTitleColor: HMSThemeColors.onSurfaceMediumEmphasis,
                   onTap: () => {
-                    // Navigator.pop(context),
+                    Navigator.pop(context),
                     showModalBottomSheet(
                       isScrollControlled: true,
                       backgroundColor: HMSThemeColors.surfaceDim,
@@ -132,7 +132,7 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                       : "The session will end for everyone in the room immediately.",
                   subTitleColor: HMSThemeColors.alertErrorBright,
                   onTap: () => {
-                    // Navigator.pop(context),
+                    Navigator.pop(context),
                     showModalBottomSheet(
                       isScrollControlled: true,
                       backgroundColor: HMSThemeColors.surfaceDim,

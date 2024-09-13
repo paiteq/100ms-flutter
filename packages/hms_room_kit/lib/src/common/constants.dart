@@ -1,4 +1,5 @@
 //Class contains the constants used throughout the application
+import 'package:go_router/go_router.dart';
 import 'package:hms_room_kit/hms_room_kit.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
@@ -53,4 +54,6 @@ class Constant {
 
   ///[Constant.onRoomEndCrossTap] is the function that you wish to execute while leaving room with cross icon in end room page
   static Function? onRoomEndCrossTap;
+
+  static GoRouter? router;
 }
