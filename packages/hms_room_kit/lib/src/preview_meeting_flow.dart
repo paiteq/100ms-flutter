@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 ///Project imports
@@ -17,11 +18,13 @@ class PreviewMeetingFlow extends StatefulWidget {
   final HMSPrebuiltOptions? prebuiltOptions;
   final HMSSDKInteractor hmsSDKInteractor;
   final String tokenData;
+  final GoRouter? router;
   const PreviewMeetingFlow(
       {super.key,
       required this.prebuiltOptions,
       required this.hmsSDKInteractor,
-      required this.tokenData});
+      required this.tokenData,
+      this.router});
 
   @override
   State<PreviewMeetingFlow> createState() => _PreviewMeetingFlowState();
@@ -54,6 +57,7 @@ class _PreviewMeetingFlowState extends State<PreviewMeetingFlow> {
               name: widget.prebuiltOptions?.userName ?? "",
               options: widget.prebuiltOptions,
               tokenData: widget.tokenData,
+              router: widget.router,
             ));
   }
 }

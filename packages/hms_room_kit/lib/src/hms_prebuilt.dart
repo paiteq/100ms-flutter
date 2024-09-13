@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 ///Package imports
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
@@ -37,6 +38,7 @@ class HMSPrebuilt extends StatefulWidget {
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
   final Function? onRoomEndCrossTap;
+  final GoRouter? router;
 
   ///The key for the widget
   HMSPrebuilt({
@@ -47,6 +49,7 @@ class HMSPrebuilt extends StatefulWidget {
     this.authToken,
     this.languageCode,
     this.onRoomEndCrossTap,
+    this.router,
   }) {
     if (roomCode == null && authToken == null) {
       throw ArgumentError.notNull(
@@ -92,6 +95,7 @@ class _HMSPrebuiltState extends State<HMSPrebuilt> {
       options: widget.options,
       onLeave: widget.onLeave,
       onRoomEndCrossTap: widget.onRoomEndCrossTap,
+      router: widget.router,
     );
   }
 }

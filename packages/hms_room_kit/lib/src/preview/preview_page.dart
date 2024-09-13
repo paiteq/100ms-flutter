@@ -5,6 +5,8 @@ import 'dart:io';
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hms_room_kit/src/hmssdk_interactor.dart';
 import 'package:provider/provider.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
@@ -27,12 +29,15 @@ class PreviewPage extends StatefulWidget {
   final String name;
   final HMSPrebuiltOptions? options;
   final String tokenData;
+  final GoRouter? router;
 
-  const PreviewPage(
-      {super.key,
-      required this.name,
-      required this.options,
-      required this.tokenData});
+  const PreviewPage({
+    super.key,
+    required this.name,
+    required this.options,
+    required this.tokenData,
+    this.router,
+  });
   @override
   State<PreviewPage> createState() => _PreviewPageState();
 }
@@ -55,6 +60,17 @@ class _PreviewPageState extends State<PreviewPage> {
     super.dispose();
   }
 
+  // final meetingController = GoRoute(
+  //   name: '/meeting_contoller',
+  //   path: '/meeting_contoller',
+  //   pageBuilder: (context, state) {
+  //     return MaterialPage(
+  //         child: MeetingScreenController(
+  //       params: state.extra as MeetingScreenControllerParams,
+  //     ));
+  //   },
+  // );
+
   ///[_navigateToMeeting] navigates to meeting from preview
   void _navigateToMeeting(PreviewStore previewStore) {
     HMSRole? role = previewStore.peer?.role;
@@ -66,19 +82,31 @@ class _PreviewPageState extends State<PreviewPage> {
       return;
     }
     previewStore.removePreviewListener();
+    widget.router?.routerDelegate.navigatorKey.currentState
+        ?.pushReplacement(MaterialPageRoute(
+            builder: (context) => MeetingScreenController(
+                  role: role,
+                  localPeerNetworkQuality: localPeerNetworkQuality,
+                  user: nameController.text.trim(),
+                  isRoomMute: isRoomMute,
+                  currentAudioDeviceMode: currentAudioDeviceMode,
+                  tokenData: widget.tokenData,
+                  hmsSDKInteractor: previewStore.hmsSDKInteractor,
+                  isNoiseCancellationEnabled:
+                      previewStore.isNoiseCancellationEnabled,
+                )));
 
-    Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => MeetingScreenController(
-              role: role,
-              localPeerNetworkQuality: localPeerNetworkQuality,
-              user: nameController.text.trim(),
-              isRoomMute: isRoomMute,
-              currentAudioDeviceMode: currentAudioDeviceMode,
-              tokenData: widget.tokenData,
-              hmsSDKInteractor: previewStore.hmsSDKInteractor,
-              isNoiseCancellationEnabled:
-                  previewStore.isNoiseCancellationEnabled,
-            )));
+    // widget.router?.pushReplacement('/meeting_contoller',
+    //     extra: MeetingScreenControllerParams(
+    //       role: role,
+    //       localPeerNetworkQuality: localPeerNetworkQuality,
+    //       user: nameController.text.trim(),
+    //       isRoomMute: isRoomMute,
+    //       currentAudioDeviceMode: currentAudioDeviceMode,
+    //       tokenData: widget.tokenData,
+    //       hmsSDKInteractor: previewStore.hmsSDKInteractor,
+    //       isNoiseCancellationEnabled: previewStore.isNoiseCancellationEnabled,
+    //     ));
   }
 
   @override
@@ -312,4 +340,33 @@ class _PreviewPageState extends State<PreviewPage> {
           }),
     );
   }
+}
+
+class MeetingScreenControllerParams {
+  final String user;
+  final int? localPeerNetworkQuality;
+  final bool isRoomMute;
+  final bool showStats;
+  final bool mirrorCamera;
+  final HMSRole? role;
+  final HMSConfig? config;
+  final HMSPrebuiltOptions? options;
+  final String? tokenData;
+  final HMSAudioDevice currentAudioDeviceMode;
+  final HMSSDKInteractor hmsSDKInteractor;
+  final bool isNoiseCancellationEnabled;
+
+  const MeetingScreenControllerParams(
+      {required this.user,
+      required this.localPeerNetworkQuality,
+      this.isRoomMute = false,
+      this.showStats = false,
+      this.mirrorCamera = true,
+      this.role,
+      this.config,
+      this.currentAudioDeviceMode = HMSAudioDevice.AUTOMATIC,
+      this.options,
+      this.tokenData,
+      required this.hmsSDKInteractor,
+      this.isNoiseCancellationEnabled = false});
 }

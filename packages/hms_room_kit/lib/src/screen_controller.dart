@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
 import 'package:hms_room_kit/src/preview_meeting_flow.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -33,6 +34,7 @@ class ScreenController extends StatefulWidget {
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
   final Function? onRoomEndCrossTap;
+  final GoRouter? router;
 
   const ScreenController({
     super.key,
@@ -41,6 +43,7 @@ class ScreenController extends StatefulWidget {
     this.onLeave,
     this.authToken,
     this.onRoomEndCrossTap,
+    this.router,
   });
   @override
   State<ScreenController> createState() => _ScreenControllerState();
@@ -202,6 +205,7 @@ class _ScreenControllerState extends State<ScreenController> {
                   prebuiltOptions: widget.options,
                   hmsSDKInteractor: _hmsSDKInteractor,
                   tokenData: tokenData,
+                  router: widget.router,
                 )
               : PreviewPermissions(
                   options: widget.options,
