@@ -7,6 +7,7 @@ import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
 import 'package:hms_room_kit/src/preview_meeting_flow.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
+import 'package:flutter_localizations/src/material_localizations.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
@@ -197,6 +198,7 @@ class _ScreenControllerState extends State<ScreenController> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       supportedLocales: [Locale('nl'), Locale('en')],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       locale: Locale(widget.languageCode.toString()),
       builder: (context, child) => Scaffold(
         body: (isLoading)
