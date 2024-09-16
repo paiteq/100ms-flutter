@@ -13,6 +13,7 @@ import 'package:hms_room_kit/hms_room_kit.dart';
 import 'package:hms_room_kit/src/common/utility_components.dart';
 import 'package:hms_room_kit/src/hmssdk_interactor.dart';
 import 'package:hms_room_kit/src/preview/preview_permissions.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///[ScreenController] is the controller for the preview screen
 ///It takes following parameters:
@@ -194,7 +195,9 @@ class _ScreenControllerState extends State<ScreenController> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: Locale(widget.languageCode ?? 'nl'),
+      debugShowCheckedModeBanner: false,
+      supportedLocales: [Locale('nl'), Locale('en')],
+      locale: Locale(widget.languageCode.toString()),
       builder: (context, child) => Scaffold(
         body: (isLoading)
             ? Center(
