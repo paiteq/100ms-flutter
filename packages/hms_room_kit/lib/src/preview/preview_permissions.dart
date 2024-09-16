@@ -6,6 +6,7 @@ import 'dart:io';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/common/utility_functions.dart';
@@ -74,7 +75,7 @@ class _PreviewPermissionsState extends State<PreviewPermissions> {
                       height: 20,
                     ),
                     HMSTitleText(
-                      text: "Enable permissions",
+                      text: t.enable_permissions,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       fontSize: 24,
                       lineHeight: 32,
@@ -83,7 +84,7 @@ class _PreviewPermissionsState extends State<PreviewPermissions> {
                       height: 8,
                     ),
                     HMSSubtitleText(
-                        text: "Just a few things before you join",
+                        text: t.few_things_before_joining,
                         fontSize: 14,
                         lineHeight: 20,
                         textColor: HMSThemeColors.onSecondaryMediumEmphasis),
@@ -111,7 +112,7 @@ class _PreviewPermissionsState extends State<PreviewPermissions> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: HMSTitleText(
-                            text: "Grant Permissions",
+                            text: t.grant_permissions,
                             textColor: HMSThemeColors.onPrimaryHighEmphasis),
                       ),
                     ),

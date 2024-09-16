@@ -6,6 +6,7 @@ import 'dart:io';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -74,7 +75,7 @@ class _PreviewDeviceSettingsState extends State<PreviewDeviceSettings> {
                             Row(
                               children: [
                                 HMSTitleText(
-                                  text: "Audio Output",
+                                  text: t.audio_output,
                                   textColor:
                                       HMSThemeColors.onSurfaceHighEmphasis,
                                   letterSpacing: 0.15,
@@ -117,7 +118,7 @@ class _PreviewDeviceSettingsState extends State<PreviewDeviceSettings> {
                                             BlendMode.srcIn),
                                       ),
                                       title: HMSSubtitleText(
-                                        text: "Auto",
+                                        text: t.auto,
                                         fontSize: 14,
                                         lineHeight: 20,
                                         letterSpacing: 0.10,
@@ -166,7 +167,7 @@ class _PreviewDeviceSettingsState extends State<PreviewDeviceSettings> {
                                             BlendMode.srcIn),
                                       ),
                                       title: HMSSubtitleText(
-                                        text: "Mute Audio",
+                                        text: t.mute_audio,
                                         fontSize: 14,
                                         lineHeight: 20,
                                         letterSpacing: 0.10,
@@ -223,7 +224,7 @@ class _PreviewDeviceSettingsState extends State<PreviewDeviceSettings> {
                                                   BlendMode.srcIn),
                                             ),
                                             title: HMSSubtitleText(
-                                              text: "Mute Audio",
+                                              text: t.mute_audio,
                                               fontSize: 14,
                                               lineHeight: 20,
                                               letterSpacing: 0.10,

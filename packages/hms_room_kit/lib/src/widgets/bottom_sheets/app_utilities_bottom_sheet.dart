@@ -4,6 +4,7 @@ library;
 import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/closed_caption_bottom_sheet.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/closed_caption_control_bottom_sheet.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -90,7 +91,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                   Row(
                     children: [
                       HMSTitleText(
-                        text: "Options",
+                        text: t.options,
                         textColor: HMSThemeColors.onSurfaceHighEmphasis,
                         letterSpacing: 0.15,
                       )
@@ -174,7 +175,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                           ),
                         ),
                       ),
-                      optionText: "Participants"),
+                      optionText: t.participants),
 
                 ///This renders the screen share option
                 if (meetingStore.localPeer?.role.publishSettings?.allowed
@@ -199,8 +200,8 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                           BlendMode.srcIn),
                     ),
                     optionText: meetingStore.isScreenShareOn
-                        ? "Sharing Screen"
-                        : "Share Screen",
+                        ? t.sharing_screen
+                        : t.share_screen,
                   ),
 
                 ///This renders the brb option
@@ -221,7 +222,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                         ),
                       ),
                       optionText:
-                          meetingStore.isBRB ? "I'm Back" : "Be Right Back"),
+                          meetingStore.isBRB ? t.iam_back : t.be_right_back),
 
                 ///This renders the raise hand option
                 if (HMSRoomLayout.isHandRaiseEnabled)
@@ -240,8 +241,8 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                             BlendMode.srcIn),
                       ),
                       optionText: meetingStore.isRaisedHand
-                          ? "Lower Hand"
-                          : "Raise Hand"),
+                          ? t.lower_hand
+                          : t.raise_hand),
 
                 ///This renders the polls and quizzes option
                 if ((meetingStore.localPeer?.role.permissions.pollRead ??
@@ -274,7 +275,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                             HMSThemeColors.onSurfaceHighEmphasis,
                             BlendMode.srcIn),
                       ),
-                      optionText: "Polls and Quizzes"),
+                      optionText: t.polls_and_quizes),
 
                 ///This renders the recording option
                 ///This option is only rendered if the local peer has the permission to
@@ -304,7 +305,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                                 HMSThemeColors.onSurfaceLowEmphasis,
                                 BlendMode.srcIn),
                           ),
-                          optionText: "Record",
+                          optionText: t.record,
                           optionTextColor: HMSThemeColors.onSurfaceLowEmphasis,
                         )
                       : MoreOptionItem(
@@ -335,7 +336,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                                     onButtonPressed: () =>
                                         meetingStore.stopRtmpAndRecording(),
                                     title: HMSTitleText(
-                                      text: "Stop Recording",
+                                      text: t.stop_recording,
                                       textColor:
                                           HMSThemeColors.alertErrorDefault,
                                       letterSpacing: 0.15,
@@ -350,13 +351,12 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                                           BlendMode.srcIn),
                                     ),
                                     subTitle: HMSSubheadingText(
-                                      text:
-                                          "Are you sure you want to stop recording? You\n can’t undo this action.",
+                                      text: t.are_you_sure_stop_recording,
                                       maxLines: 2,
                                       textColor: HMSThemeColors
                                           .onSurfaceMediumEmphasis,
                                     ),
-                                    buttonText: "Stop Recording",
+                                    buttonText: t.stop_recording,
                                   ),
                                 ),
                               );
@@ -382,13 +382,13 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                           ),
                           optionText: meetingStore.recordingType["browser"] ==
                                   HMSRecordingState.paused
-                              ? "Recording Paused"
+                              ? t.recording_paused
                               : ((meetingStore.recordingType["hls"] ==
                                           HMSRecordingState.started) ||
                                       (meetingStore.recordingType["browser"] ==
                                           HMSRecordingState.started))
-                                  ? "Recording"
-                                  : "Record",
+                                  ? t.recording
+                                  : t.record,
                         ),
                 if (meetingStore.isNoiseCancellationAvailable &&
                     meetingStore.localPeer?.audioTrack != null &&
@@ -408,8 +408,8 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                             BlendMode.srcIn),
                       ),
                       optionText: meetingStore.isNoiseCancellationEnabled
-                          ? "Noise Reduced"
-                          : "Reduce Noise"),
+                          ? t.noise_reduced
+                          : t.reduce_noise),
 
                 if (meetingStore
                         .localPeer?.role.permissions.whiteboard?.admin ??
@@ -430,8 +430,8 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                       ),
                       optionTextColor: getWhiteboardStatusColor(meetingStore),
                       optionText: meetingStore.isWhiteboardEnabled
-                          ? "Close Whiteboard"
-                          : "Open Whiteboard"),
+                          ? t.close_whiteboard
+                          : t.open_whiteboard),
 
                 ///This renders the closed captions option
                 ///This option is only rendered if the local peer has the permission to
@@ -466,8 +466,7 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                                           onButtonPressed: () => meetingStore
                                               .toggleTranscription(),
                                           title: HMSTitleText(
-                                            text:
-                                                "Enable Closed Captions (CC) for this session?",
+                                            text: t.enable_close_captions,
                                             maxLines: 5,
                                             textColor: HMSThemeColors
                                                 .onSecondaryHighEmphasis,
@@ -475,13 +474,13 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                                             fontSize: 20,
                                           ),
                                           subTitle: HMSSubheadingText(
-                                            text:
-                                                "This will enable Closed Captions for everyone in this room. You can disable it later.",
+                                            text: t
+                                                .this_will_enable_close_captions,
                                             maxLines: 2,
                                             textColor: HMSThemeColors
                                                 .onSurfaceMediumEmphasis,
                                           ),
-                                          buttonText: "Enable for Everyone",
+                                          buttonText: t.enable_for_everyone,
                                         ),
                                 ),
                               )
@@ -504,10 +503,10 @@ class _AppUtilitiesBottomSheetState extends State<AppUtilitiesBottomSheet> {
                       ///we show the option to enable/disable transcription
                       ///else we show the option to show/hide captions
                       optionText: getTranscriptionPermission(meetingStore)
-                          ? "Closed Captions"
+                          ? t.closed_captions
                           : meetingStore.isTranscriptionDisplayed
-                              ? "Hide Captions"
-                              : "Show Captions"),
+                              ? t.hide_captions
+                              : t.show_Captions),
 
                 ///Virtual background is not supported out of the box in prebuilt as of now
                 // if (AppDebugConfig.isVirtualBackgroundEnabled &&

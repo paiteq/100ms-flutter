@@ -7,6 +7,7 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
@@ -74,7 +75,7 @@ class _PreviewForRoleHeaderState extends State<PreviewForRoleHeader> {
                                 borderRadius: BorderRadius.circular(4)),
                             child: Center(
                               child: HMSTitleText(
-                                  text: "LIVE",
+                                  text: t.live,
                                   fontSize: 10,
                                   lineHeight: 16,
                                   letterSpacing: 1.5,

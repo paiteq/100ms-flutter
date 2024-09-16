@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -209,7 +210,7 @@ class _PollVoteCardState extends State<PollVoteCard> {
                           ? HMSThemeColors.primaryDefault
                           : HMSThemeColors.primaryDisabled,
                       childWidget: HMSTitleText(
-                          text: widget.isPoll ? "Vote" : "Answer",
+                          text: widget.isPoll ? t.vote : t.answer,
                           textColor: isPollAnswerValid || !_isAnswered
                               ? HMSThemeColors.onPrimaryHighEmphasis
                               : HMSThemeColors.onPrimaryLowEmphasis))

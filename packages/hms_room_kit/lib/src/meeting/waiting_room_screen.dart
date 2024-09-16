@@ -3,6 +3,7 @@ library;
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 ///Project imports
@@ -49,7 +50,7 @@ class WaitingRoomScreen extends StatelessWidget {
                 height: 24,
               ),
               HMSTitleText(
-                text: "Ready to present",
+                text: t.ready_to_present,
                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
                 fontSize: 24,
                 lineHeight: 32,
@@ -58,8 +59,7 @@ class WaitingRoomScreen extends StatelessWidget {
                 height: 8,
               ),
               HMSTitleText(
-                text:
-                    "Select the screenshare button \nfrom the menu to start presenting.",
+                text: t.select_screenshare_button,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                 fontWeight: FontWeight.w400,
                 maxLines: 3,
@@ -81,7 +81,7 @@ class WaitingRoomScreen extends StatelessWidget {
                 height: 24,
               ),
               HMSTitleText(
-                text: "Waiting for Host to join",
+                text: t.waiting_for_host_to_join,
                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
                 fontSize: 24,
                 lineHeight: 32,
@@ -90,7 +90,7 @@ class WaitingRoomScreen extends StatelessWidget {
                 height: 8,
               ),
               HMSTitleText(
-                text: "Sit back and relax",
+                text: t.sit_back_and_relax,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                 fontWeight: FontWeight.w400,
               )

@@ -4,6 +4,7 @@ library;
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/meeting/meeting_store.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/poll_vote_bottom_sheet.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/poll_creation_widgets/poll_question_bottom_sheet.dart';
@@ -165,7 +166,7 @@ class PollQuestionCard extends StatelessWidget {
                                 ));
                       },
                       childWidget: HMSTitleText(
-                          text: "View",
+                          text: t.view,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis))
                 ],
               )

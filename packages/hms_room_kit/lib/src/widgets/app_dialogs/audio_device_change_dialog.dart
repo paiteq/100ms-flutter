@@ -1,6 +1,7 @@
 //Package imports
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 //Project imports
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -53,7 +54,7 @@ class AudioDeviceChangeDialogState extends State<AudioDeviceChangeDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HMSTitleText(
-            text: "Change Audio Device",
+            text: t.change_audio_device,
             fontSize: 20,
             letterSpacing: 0.15,
             textColor: themeDefaultColor,
@@ -118,7 +119,7 @@ class AudioDeviceChangeDialogState extends State<AudioDeviceChangeDialog> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                  child: Text('Cancel',
+                  child: Text(t.cancel,
                       style: HMSTextStyle.setTextStyle(
                           color: themeDefaultColor,
                           fontSize: 16,

@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
@@ -57,7 +58,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           HMSTitleText(
-                            text: "Send message to",
+                            text: t.send_message_to,
                             textColor: HMSThemeColors.onSurfaceHighEmphasis,
                             letterSpacing: 0.15,
                           ),
@@ -91,12 +92,12 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                             child: ListTile(
                               onTap: () {
                                 setState(() {
-                                  currentlySelectedValue = "Everyone";
+                                  currentlySelectedValue = t.everyone;
                                 });
                                 widget.updateUI(currentlySelectedValue, null);
                                 context
                                     .read<MeetingStore>()
-                                    .recipientSelectorValue = "Everyone";
+                                    .recipientSelectorValue = t.everyone;
                                 Navigator.pop(context);
                               },
                               dense: true,
@@ -112,13 +113,13 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                 height: 20,
                               ),
                               title: HMSTitleText(
-                                text: "Everyone",
+                                text: t.everyone,
                                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
                                 fontSize: 14,
                                 letterSpacing: 0.1,
                                 lineHeight: 20,
                               ),
-                              trailing: currentlySelectedValue == "Everyone"
+                              trailing: currentlySelectedValue == t.everyone
                                   ? SvgPicture.asset(
                                       "packages/hms_room_kit/lib/src/assets/icons/tick.svg",
                                       fit: BoxFit.scaleDown,
@@ -162,7 +163,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                 height: 20,
                               ),
                               title: HMSTitleText(
-                                text: "ROLE GROUP",
+                                text: t.role_group,
                                 textColor:
                                     HMSThemeColors.onSurfaceMediumEmphasis,
                                 fontSize: 10,
@@ -262,7 +263,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                             height: 20,
                                           ),
                                           title: HMSTitleText(
-                                            text: "DIRECT MESSAGE",
+                                            text: t.direct_message,
                                             textColor: HMSThemeColors
                                                 .onSurfaceMediumEmphasis,
                                             fontSize: 10,
@@ -291,7 +292,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                                     ?.rolesWhitelist.isEmpty ??
                                                 false))
                                         ? HMSTitleText(
-                                            text: "No recipients yet",
+                                            text: t.no_participant_yet,
                                             textColor: HMSThemeColors
                                                 .onSurfaceMediumEmphasis,
                                             fontSize: 14,

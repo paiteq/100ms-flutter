@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/enums/session_store_keys.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
 import 'package:hms_room_kit/src/meeting/meeting_store.dart';
@@ -49,7 +50,7 @@ class _ChatOnlyBottomSheetState extends State<ChatOnlyBottomSheet> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HMSSubheadingText(
-                  text: HMSRoomLayout.chatData?.chatTitle ?? "Chat",
+                  text: HMSRoomLayout.chatData?.chatTitle ?? t.chat,
                   textColor: HMSThemeColors.onSurfaceHighEmphasis,
                   fontWeight: FontWeight.w600,
                 ),
@@ -84,8 +85,8 @@ class _ChatOnlyBottomSheetState extends State<ChatOnlyBottomSheet> {
                                     text: context
                                             .read<MeetingStore>()
                                             .chatControls["enabled"]
-                                        ? "Pause Chat"
-                                        : "Resume Chat",
+                                        ? t.pause_chat
+                                        : t.resume_chat,
                                     textColor:
                                         HMSThemeColors.onSurfaceHighEmphasis,
                                     fontSize: 14,

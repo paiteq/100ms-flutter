@@ -5,6 +5,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 ///Project imports
@@ -194,7 +195,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
               height: 8,
             ),
             HMSSubheadingText(
-              text: "Question Type",
+              text: t.question_type,
               textColor: HMSThemeColors.onSurfaceHighEmphasis,
             ),
             const SizedBox(
@@ -237,7 +238,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
               height: 8,
             ),
             HMSSubheadingText(
-              text: "Question",
+              text: t.question,
               textColor: HMSThemeColors.onSurfaceHighEmphasis,
             ),
             const SizedBox(
@@ -299,7 +300,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
             ),
 
             HMSSubheadingText(
-              text: "Select one of the radio button to mark the correct answer",
+              text: t.select_radio_button,
               textColor: HMSThemeColors.onSurfaceMediumEmphasis,
               maxLines: 2,
             ),
@@ -454,7 +455,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
                         width: 16,
                       ),
                       HMSSubheadingText(
-                        text: "Add an option",
+                        text: t.add_an_option,
                         textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                       ),
                     ],
@@ -476,7 +477,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HMSSubheadingText(
-                    text: "Point Weightage",
+                    text: t.point_weightage,
                     textColor: HMSThemeColors.onSurfaceMediumEmphasis),
                 SizedBox(
                   width: 88,
@@ -559,7 +560,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
                       saveQuestion();
                     },
                     child: HMSTitleText(
-                        text: "Save",
+                        text: t.save,
                         textColor: _isQuizValid()
                             ? HMSThemeColors.onSecondaryHighEmphasis
                             : HMSThemeColors.onSecondaryLowEmphasis))

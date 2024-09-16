@@ -1,5 +1,6 @@
 // Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 // Project imports
@@ -63,7 +64,7 @@ class TrackChangeRequestDialogState extends State<TrackChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child:
-                    HMSTitleText(text: 'Reject', textColor: themeDefaultColor),
+                    HMSTitleText(text: t.reject, textColor: themeDefaultColor),
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -82,7 +83,7 @@ class TrackChangeRequestDialogState extends State<TrackChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child: HMSTitleText(
-                  text: 'Accept',
+                  text: t.accept,
                   textColor: themeDefaultColor,
                 ),
               ),

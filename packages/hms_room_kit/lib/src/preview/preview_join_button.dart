@@ -58,7 +58,7 @@ class PreviewJoinButton extends StatelessWidget {
                 HMSTitleText(
                   text: HMSRoomLayout.roleLayoutData?.screens?.preview?.joinForm
                           ?.goLiveBtnLabel ??
-                      'Go Live',
+                      t.go_live,
                   textColor: isEmpty
                       ? HMSThemeColors.onPrimaryLowEmphasis
                       : HMSThemeColors.onPrimaryHighEmphasis,

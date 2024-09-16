@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart' as roomlayout;
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_subheading_text.dart';
 
@@ -76,10 +77,10 @@ class HMSLeftRoomScreen extends StatelessWidget {
                     text: (doesRoleHasStreamPermission ||
                             roomlayout.HMSRoomLayout.peerType ==
                                 roomlayout.PeerRoleType.hlsViewer)
-                        ? "You left the stream"
+                        ? t.you_left_the_stream
                         : isEndRoomCalled
-                            ? "Session ended"
-                            : "You left the meeting",
+                            ? t.session_ended
+                            : t.you_left_the_meeting,
                     textColor: HMSThemeColors.onSurfaceHighEmphasis,
                     fontSize: 24,
                     lineHeight: 32,
@@ -88,7 +89,7 @@ class HMSLeftRoomScreen extends StatelessWidget {
                     height: 4,
                   ),
                   HMSTitleText(
-                    text: "Have a nice day!",
+                    text: t.have_a_nice_day,
                     textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                     fontWeight: FontWeight.w400,
                   ),
@@ -103,8 +104,8 @@ class HMSLeftRoomScreen extends StatelessWidget {
                       ///If the room end is called, and peer role type is conferencing the text is "Ended by mistake?"
                       ///If you leave the room, the text is "Left by mistake?"
                       text: (doesRoleHasStreamPermission || !(isEndRoomCalled))
-                          ? "Left by mistake?"
-                          : "Ended by mistake?",
+                          ? t.left_by_mistake
+                          : t.ended_by_mistake,
                       textColor: HMSThemeColors.onSurfaceMediumEmphasis),
                   const SizedBox(
                     height: 16,
@@ -159,8 +160,8 @@ class HMSLeftRoomScreen extends StatelessWidget {
                               ///If you leave the room, the text is "Rejoin"
                               text: (doesRoleHasStreamPermission ||
                                       !(isEndRoomCalled))
-                                  ? "Rejoin"
-                                  : "Restart",
+                                  ? t.rejoin
+                                  : t.restart,
                               textColor: HMSThemeColors.onPrimaryHighEmphasis,
                             )
                           ],

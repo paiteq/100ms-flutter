@@ -4,6 +4,7 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -75,7 +76,7 @@ class MessageContainer extends StatelessWidget {
                                 ? width * 0.25
                                 : width * 0.5),
                         child: HMSTitleText(
-                          text: message.sender?.name ?? "Anonymous",
+                          text: message.sender?.name ?? t.anonymous,
                           fontSize: 14,
                           letterSpacing: 0.1,
                           lineHeight: 20,

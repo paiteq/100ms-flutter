@@ -6,6 +6,7 @@ import 'dart:io';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_subheading_text.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
@@ -100,7 +101,7 @@ class HLSViewerBottomNavigationBar extends StatelessWidget {
                                                     ),
                                                   ),
                                                   HMSTitleText(
-                                                      text: "LIVE",
+                                                      text: t.live,
                                                       textColor: HMSThemeColors
                                                           .onSurfaceHighEmphasis)
                                                 ],
@@ -122,7 +123,7 @@ class HLSViewerBottomNavigationBar extends StatelessWidget {
                                                     ),
                                                   ),
                                                   HMSTitleText(
-                                                      text: "GO LIVE",
+                                                      text: t.go_live,
                                                       textColor: HMSThemeColors
                                                           .onSurfaceMediumEmphasis),
                                                   Selector<HLSPlayerStore,

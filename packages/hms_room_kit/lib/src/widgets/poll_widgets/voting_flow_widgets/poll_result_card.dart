@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 ///Project imports
@@ -199,7 +200,7 @@ class PollResultCard extends StatelessWidget {
                                         semanticsLabel: "tick",
                                       )
                                     : HMSSubheadingText(
-                                        text: "Your Answer",
+                                        text: t.your_answer,
                                         textColor: HMSThemeColors
                                             .onSurfaceMediumEmphasis),
                               if (!isVoteCountHidden && isPoll)
@@ -254,7 +255,7 @@ class PollResultCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     HMSTitleText(
-                        text: isPoll ? "Voted" : "Answered",
+                        text: isPoll ? t.voted : t.answer,
                         textColor: HMSThemeColors.onSurfaceLowEmphasis)
                   ],
                 )

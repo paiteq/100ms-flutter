@@ -7,6 +7,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
@@ -46,7 +47,7 @@ class HLSStreamDescription extends StatelessWidget {
                     children: [
                       Expanded(
                         child: HMSTitleText(
-                          text: "About Session",
+                          text: t.about_session,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           letterSpacing: 0 / 15,
                         ),

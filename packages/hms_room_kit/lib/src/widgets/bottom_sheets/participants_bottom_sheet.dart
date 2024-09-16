@@ -8,6 +8,7 @@ import 'dart:developer';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -208,8 +209,8 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                         ),
                         HMSTitleText(
                           text: isOnStageRole
-                              ? "Remove from Stage"
-                              : "Bring on Stage",
+                              ? t.remove_from_stage
+                              : t.bring_on_stage,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -232,7 +233,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                           width: 8,
                         ),
                         HMSTitleText(
-                          text: "Lower Hand",
+                          text: t.lower_hand,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -262,7 +263,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.track?.isMute ?? false ? "Unmute" : "Mute"} Video",
+                              "${peerTrackNode.track?.isMute ?? false ? t.unmute : t.mute} ${t.video}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -291,7 +292,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.audioTrack?.isMute ?? false ? "Unmute" : "Mute"} Audio",
+                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.unmute : t.mute} ${t.audio}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -314,7 +315,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                           width: 8,
                         ),
                         HMSTitleText(
-                          text: "Remove Participant",
+                          text: t.remove_participant,
                           textColor: HMSThemeColors.alertErrorDefault,
                           fontSize: 14,
                           lineHeight: 20,
@@ -598,7 +599,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                                                           children: [
                                                             HMSSubheadingText(
                                                                 text:
-                                                                    "View All",
+                                                                    t.view_all,
                                                                 textColor:
                                                                     HMSThemeColors
                                                                         .onSurfaceHighEmphasis),

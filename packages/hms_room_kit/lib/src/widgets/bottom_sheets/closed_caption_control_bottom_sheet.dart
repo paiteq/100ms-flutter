@@ -2,6 +2,7 @@ library;
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 ///Project imports
@@ -54,7 +55,7 @@ class _ClosedCaptionControlBottomSheetState
                   Row(
                     children: [
                       HMSTitleText(
-                        text: "Closed Captions (CC)",
+                        text: t.closed_captions,
                         textColor: HMSThemeColors.onSecondaryHighEmphasis,
                         letterSpacing: 0.15,
                         fontSize: 20,
@@ -91,7 +92,7 @@ class _ClosedCaptionControlBottomSheetState
                     child: Center(
                       child: HMSTitleText(
                           text:
-                              "${widget.meetingStore.isTranscriptionDisplayed ? "Hide" : "Show"} for Me",
+                              "${widget.meetingStore.isTranscriptionDisplayed ? t.hide : t.show} ${t.for_me}",
                           textColor: HMSThemeColors.onSecondaryHighEmphasis),
                     ),
                   )),
@@ -116,7 +117,7 @@ class _ClosedCaptionControlBottomSheetState
                     height: 48,
                     child: Center(
                       child: HMSTitleText(
-                          text: "Disable For Everyone",
+                          text: t.disable_for_everyone,
                           textColor: HMSThemeColors.alertErrorBrighter),
                     ),
                   )),
@@ -124,8 +125,7 @@ class _ClosedCaptionControlBottomSheetState
                 height: 16,
               ),
               HMSSubheadingText(
-                text:
-                    "This will disable Closed Captions for everyone in this room. You can enable it again.",
+                text: t.this_will_disable_close_captions,
                 maxLines: 2,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
               ),

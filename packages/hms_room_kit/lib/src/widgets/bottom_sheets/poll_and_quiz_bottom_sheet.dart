@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/poll_creation_widgets/poll_quiz_form.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/poll_quiz_selection_widget.dart';
 import 'package:provider/provider.dart';
@@ -61,7 +62,7 @@ class _PollAndQuizBottomSheetState extends State<PollAndQuizBottomSheet> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     HMSTitleText(
-                      text: "Polls and Quizzes",
+                      text: t.polls_and_quizes,
                       fontSize: 20,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                     ),

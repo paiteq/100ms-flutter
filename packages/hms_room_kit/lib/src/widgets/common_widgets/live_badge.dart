@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/cupertino.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
@@ -28,7 +29,7 @@ class LiveBadge extends StatelessWidget {
             borderRadius: BorderRadius.circular(4)),
         child: Center(
           child: HMSTitleText(
-              text: text ?? "LIVE",
+              text: text ?? t.live,
               fontSize: 10,
               lineHeight: 16,
               letterSpacing: 1.5,

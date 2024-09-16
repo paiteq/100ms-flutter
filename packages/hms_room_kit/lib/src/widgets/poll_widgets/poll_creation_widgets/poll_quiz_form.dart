@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/poll_creation_widgets/poll_question_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
@@ -51,7 +52,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HMSSubheadingText(
-            text: "${widget.isPoll ? "Poll" : "Quiz"} Name",
+            text: "${widget.isPoll ? t.poll : t.quiz} Name",
             textColor: HMSThemeColors.onSurfaceHighEmphasis),
         const SizedBox(
           height: 8,
@@ -78,7 +79,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 fillColor: HMSThemeColors.surfaceDefault,
                 filled: true,
-                hintText: "Name this ${widget.isPoll ? "Poll" : "Quiz"}",
+                hintText: "Name this ${widget.isPoll ? t.poll : t.quiz}",
                 hintStyle: HMSTextStyle.setTextStyle(
                     color: HMSThemeColors.onSurfaceLowEmphasis,
                     height: 1.5,
@@ -114,7 +115,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
           Padding(
             padding: const EdgeInsets.only(bottom: 4.0),
             child: HMSSubheadingText(
-                text: "Settings",
+                text: t.settings,
                 textColor: HMSThemeColors.onSurfaceHighEmphasis),
           ),
 
@@ -126,7 +127,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
             dense: true,
             contentPadding: EdgeInsets.zero,
             title: HMSSubheadingText(
-                text: "Hide vote count",
+                text: t.hide_vote_count,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis),
             trailing: SizedBox(
               height: 24,
@@ -216,7 +217,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
                 );
               },
               childWidget: HMSTitleText(
-                text: 'Create ${widget.isPoll ? "Poll" : "Quiz"}',
+                text: '${t.create} ${widget.isPoll ? t.poll : t.quiz}',
                 textColor: _pollNameController.text.isEmpty
                     ? HMSThemeColors.onPrimaryLowEmphasis
                     : HMSThemeColors.onPrimaryHighEmphasis,

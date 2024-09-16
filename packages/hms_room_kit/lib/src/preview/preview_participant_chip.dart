@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
@@ -83,7 +84,7 @@ class PreviewParticipantChip extends StatelessWidget {
                         top: 8.0, bottom: 8, left: 20, right: 16),
                     child: peerCount == 1
                         ? HMSTitleText(
-                            text: "You are the first to join",
+                            text: t.you_are_first_to_join,
                             fontSize: 14,
                             lineHeight: 20,
                             letterSpacing: 0.25,
