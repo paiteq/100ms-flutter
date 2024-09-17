@@ -28,20 +28,27 @@ class EmptyRoomScreen extends StatelessWidget {
         const SizedBox(
           height: 24,
         ),
-        HMSTitleText(
-          text: t.you_are_first_to_join,
-          textColor: HMSThemeColors.onSurfaceHighEmphasis,
-          fontSize: 24,
-          lineHeight: 32,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: HMSTitleText(
+            text: t.you_are_first_to_join,
+            textColor: HMSThemeColors.onSurfaceHighEmphasis,
+            fontSize: 24,
+            lineHeight: 32,
+          ),
         ),
         const SizedBox(
           height: 8,
         ),
-        HMSTitleText(
-          text: t.sit_back_and_relax_till_others_join,
-          textColor: HMSThemeColors.onSurfaceMediumEmphasis,
-          fontWeight: FontWeight.w400,
-          maxLines: 3,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: HMSTitleText(
+            text: t.sit_back_and_relax_till_others_join,
+            textColor: HMSThemeColors.onSurfaceMediumEmphasis,
+            fontWeight: FontWeight.w400,
+            maxLines: 3,
+            textAlign: TextAlign.center,
+          ),
         )
       ],
     );
