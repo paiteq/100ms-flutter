@@ -136,12 +136,9 @@ class HMSLeftRoomScreen extends StatelessWidget {
                           },
                       child: SizedBox(
                         height: 48,
-                        width:
-                            (doesRoleHasStreamPermission || !(isEndRoomCalled))
-                                ? 91
-                                : 100,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             SvgPicture.asset(
                               "packages/hms_room_kit/lib/src/assets/icons/login.svg",
