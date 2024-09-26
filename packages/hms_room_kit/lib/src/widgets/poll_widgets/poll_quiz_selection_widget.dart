@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/poll_quiz_selection_button.dart';
 
 ///[PollQuizSelectionWidget] renders the widget to select between quiz or poll
@@ -36,7 +37,7 @@ class _PollQuizSelectionWidgetState extends State<PollQuizSelectionWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HMSSubtitleText(
-            text: "Select the type you want to continue with",
+            text: t.select_the_type_you_want_to_continue_with,
             textColor: HMSThemeColors.onSurfaceMediumEmphasis),
         const SizedBox(
           height: 8,
@@ -49,7 +50,7 @@ class _PollQuizSelectionWidgetState extends State<PollQuizSelectionWidget> {
               child: PollQuizSelectionButton(
                 isSelected: (index == 0),
                 iconName: "poll",
-                text: "Poll",
+                text: t.poll,
               ),
             ),
             const SizedBox(
@@ -60,7 +61,7 @@ class _PollQuizSelectionWidgetState extends State<PollQuizSelectionWidget> {
               child: PollQuizSelectionButton(
                 isSelected: (index == 1),
                 iconName: "quiz",
-                text: "Quiz",
+                text: t.quiz,
               ),
             ),
           ],

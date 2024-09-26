@@ -71,7 +71,7 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
                                     MediaQuery.of(context).size.width - 100),
                             child: HMSTitleText(
                               text:
-                                  "${widget.meetingStore.localPeer?.name} (You)",
+                                  "${widget.meetingStore.localPeer?.name} (${t.you})",
                               textColor: HMSThemeColors.onSurfaceHighEmphasis,
                               letterSpacing: 0.15,
                             ),

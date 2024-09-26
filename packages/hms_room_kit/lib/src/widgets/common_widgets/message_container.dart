@@ -22,7 +22,7 @@ import 'package:hms_room_kit/src/meeting/meeting_store.dart';
 class MessageContainer extends StatelessWidget {
   final HMSMessage message;
   final bool isHLSChat;
-  final DateFormat formatter = DateFormat('hh:mm a');
+  final DateFormat formatter = DateFormat('HH:mm');
 
   MessageContainer({Key? key, required this.message, this.isHLSChat = false})
       : super(key: key);

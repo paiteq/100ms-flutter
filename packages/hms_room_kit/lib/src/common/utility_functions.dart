@@ -6,6 +6,7 @@ import 'dart:math' as math;
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -126,9 +127,9 @@ class Utilities {
   ///This function returns the question type for poll/quiz
   static List<Tuple2<String, HMSPollQuestionType>>
       getQuestionTypeForPollQuiz() {
-    return const [
-      Tuple2("Single Choice", HMSPollQuestionType.singleChoice),
-      Tuple2("Multiple Choice", HMSPollQuestionType.multiChoice)
+    return [
+      Tuple2(t.single_choice, HMSPollQuestionType.singleChoice),
+      Tuple2(t.multiple_choice, HMSPollQuestionType.multiChoice)
     ];
   }
 

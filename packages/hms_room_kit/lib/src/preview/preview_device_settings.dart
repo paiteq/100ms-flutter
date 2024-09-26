@@ -224,7 +224,7 @@ class _PreviewDeviceSettingsState extends State<PreviewDeviceSettings> {
                                                   BlendMode.srcIn),
                                             ),
                                             title: HMSSubtitleText(
-                                              text: t.mute_audio,
+                                              text: t.mute_sound,
                                               fontSize: 14,
                                               lineHeight: 20,
                                               letterSpacing: 0.10,

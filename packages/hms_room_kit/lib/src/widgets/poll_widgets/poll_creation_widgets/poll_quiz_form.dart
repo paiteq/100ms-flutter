@@ -52,7 +52,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HMSSubheadingText(
-            text: "${widget.isPoll ? t.poll : t.quiz} Name",
+            text: widget.isPoll ? t.name_of_poll : t.name_of_quiz,
             textColor: HMSThemeColors.onSurfaceHighEmphasis),
         const SizedBox(
           height: 8,
@@ -79,7 +79,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 fillColor: HMSThemeColors.surfaceDefault,
                 filled: true,
-                hintText: "Name this ${widget.isPoll ? t.poll : t.quiz}",
+                hintText: widget.isPoll ? t.name_this_poll : t.name_this_poll,
                 hintStyle: HMSTextStyle.setTextStyle(
                     color: HMSThemeColors.onSurfaceLowEmphasis,
                     height: 1.5,
@@ -217,7 +217,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
                 );
               },
               childWidget: HMSTitleText(
-                text: '${t.create} ${widget.isPoll ? t.poll : t.quiz}',
+                text: widget.isPoll ? t.create_poll : t.create_quiz,
                 textColor: _pollNameController.text.isEmpty
                     ? HMSThemeColors.onPrimaryLowEmphasis
                     : HMSThemeColors.onPrimaryHighEmphasis,

@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
@@ -27,7 +28,7 @@ class HMSEmptyChatWidget extends StatelessWidget {
           height: 16,
         ),
         HMSTitleText(
-          text: "Start a conversation",
+          text: t.start_a_conversation,
           textColor: HMSThemeColors.onSurfaceHighEmphasis,
           fontSize: 20,
           letterSpacing: 0.15,
@@ -36,8 +37,7 @@ class HMSEmptyChatWidget extends StatelessWidget {
           height: 8,
         ),
         HMSSubheadingText(
-            text:
-                "There are no messages here yet. Start a\n conversation by sending a message.",
+            text: t.there_are_no_messages_here_yet,
             maxLines: 2,
             textAlign: TextAlign.center,
             textColor: HMSThemeColors.onSurfaceMediumEmphasis)
