@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 278 (139 per locale)
+/// Strings: 297 (148 per locale)
 ///
-/// Built on 2024-09-17 at 04:13 UTC
+/// Built on 2024-09-26 at 05:32 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -287,6 +287,15 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get audio => 'Audio';
 	String get remove_from_stage => 'Remove from Stage';
 	String get bring_on_stage => 'Bring on Stage';
+	String get on => 'On';
+	String get off => 'Off';
+	String get microphone => 'Microphone';
+	String get camera => 'Camera';
+	String get leave_session => 'Leave Session';
+	String get leave_stream => 'Leave Stream';
+	String get poor_connection => 'Poor connection';
+	String get the_video_will_resume_automatically => 'The video will resume automatically when the connection improves';
+	String track_change_message({required Object name, required Object service_status, required Object service}) => '\'${name}\' requested to ${service_status} your \'${service}\'';
 }
 
 // Path: <root>
@@ -330,17 +339,17 @@ class _StringsNl implements Translations {
 	@override String get please_select_a_role => 'Selecteer een rol';
 	@override String get change_role => 'rol veranderen';
 	@override String get end_room => 'Eindkamer';
-	@override String get others_can_contine_after_you_leave => 'Anderen gaan door nadat u bent vertrokken. Je kunt weer meedoen met de studio.';
+	@override String get others_can_contine_after_you_leave => 'Anderen zullen doorgaan nadat je vertrekt. Je kunt de sessie opnieuw betreden.';
 	@override String get about_session => 'Over sessie';
 	@override String get live => 'Live';
 	@override String get go_live => 'ga live';
 	@override String get stream_yet_to_start => 'Stream moet nog beginnen';
-	@override String get sit_back_and_relax => 'Leun achterover en ontspan';
+	@override String get sit_back_and_relax => 'Even geduld';
 	@override String get you_are_first_to_join => 'Jij bent de eerste die meedoet';
 	@override String get sit_back_and_relax_till_others_join => 'leun achterover en ontspan totdat anderen meedoen';
 	@override String get ready_to_present => 'Klaar om te presenteren';
 	@override String get select_screenshare_button => 'Selecteer de schermdeelknop \nin het menu om te beginnen met presenteren.';
-	@override String get waiting_for_host_to_join => 'Wachten tot de host deelneemt';
+	@override String get waiting_for_host_to_join => 'Wachten op de host';
 	@override String get setup_audio_before_joining => 'Stel uw audio en video in voordat u lid wordt';
 	@override String get enable_permissions => 'Machtigingen inschakelen';
 	@override String get few_things_before_joining => 'Nog even een paar dingen voordat je lid wordt';
@@ -353,8 +362,8 @@ class _StringsNl implements Translations {
 	@override String get change_streaming_quality => 'Wijzig de streamingkwaliteit';
 	@override String get change_aspect_ratio => 'Wijzig de beeldverhouding';
 	@override String get change => 'wijziging';
-	@override String get reject => 'afwijzen';
-	@override String get accept => 'accepteren';
+	@override String get reject => 'Afwijzen';
+	@override String get accept => 'Accepteren';
 	@override String get requested_to_change_your_role => 'gevraagd om uw rol te wijzigen in';
 	@override String get options => 'Opties';
 	@override String get participants => 'Deelnemers';
@@ -403,15 +412,15 @@ class _StringsNl implements Translations {
 	@override String get you_left_the_stream => 'Je hebt de stroom verlaten';
 	@override String get session_ended => 'Sessie beëindigd';
 	@override String get you_left_the_meeting => 'Je verliet de vergadering';
-	@override String get have_a_nice_day => 'Prettige dag!';
+	@override String get have_a_nice_day => 'Fijne dag!';
 	@override String get left_by_mistake => 'Per ongeluk achtergelaten?';
 	@override String get ended_by_mistake => 'Per ongeluk beëindigd?';
 	@override String get rejoin => 'Opnieuw deelnemen';
-	@override String get restart => 'Opnieuw opstarten';
+	@override String get restart => 'Herstarten';
 	@override String get anonymous => 'Anoniem';
 	@override String get audio_output => 'Audio-uitvoer';
 	@override String get auto => 'Auto';
-	@override String get mute_audio => 'Audio dempen';
+	@override String get mute_audio => 'Microfoon uit';
 	@override String get enter_name => 'Naam invoeren...';
 	@override String get change_name => 'Naam wijzigen';
 	@override String get your_name_will_be_visible => 'Uw naam zal zichtbaar zijn voor andere deelnemers aan\n de sessie.';
@@ -451,7 +460,17 @@ class _StringsNl implements Translations {
 	@override String get video => 'Video';
 	@override String get audio => 'geluid';
 	@override String get remove_from_stage => 'Verwijderen uit het podium';
-	@override String get bring_on_stage => 'Breng het podium op';
+	@override String get bring_on_stage => 'Op het podium zetten';
+	@override String get on => 'aan';
+	@override String get off => 'uit';
+	@override String get microphone => 'Microfoon';
+	@override String get camera => 'Camera';
+	@override String get leave_session => 'Sessie verlaten';
+	@override String get leave_stream => 'Stroom verlaten';
+	@override String get poor_connection => 'Slechte verbinding';
+	@override String get the_video_will_resume_automatically => ' De video wordt automatisch hervat wanneer de verbinding verbetert';
+	@override String get requested_to => 'heeft verzocht om';
+	@override String track_change_message({required Object name, required Object service, required Object service_status}) => '\'${name}\' heeft verzocht om je \'${service}\' ${service_status} te zetten';
 }
 
 /// Flat map(s) containing all translations.
@@ -599,6 +618,15 @@ extension on Translations {
 			case 'audio': return 'Audio';
 			case 'remove_from_stage': return 'Remove from Stage';
 			case 'bring_on_stage': return 'Bring on Stage';
+			case 'on': return 'On';
+			case 'off': return 'Off';
+			case 'microphone': return 'Microphone';
+			case 'camera': return 'Camera';
+			case 'leave_session': return 'Leave Session';
+			case 'leave_stream': return 'Leave Stream';
+			case 'poor_connection': return 'Poor connection';
+			case 'the_video_will_resume_automatically': return 'The video will resume automatically when the connection improves';
+			case 'track_change_message': return ({required Object name, required Object service_status, required Object service}) => '\'${name}\' requested to ${service_status} your \'${service}\'';
 			default: return null;
 		}
 	}
@@ -624,17 +652,17 @@ extension on _StringsNl {
 			case 'please_select_a_role': return 'Selecteer een rol';
 			case 'change_role': return 'rol veranderen';
 			case 'end_room': return 'Eindkamer';
-			case 'others_can_contine_after_you_leave': return 'Anderen gaan door nadat u bent vertrokken. Je kunt weer meedoen met de studio.';
+			case 'others_can_contine_after_you_leave': return 'Anderen zullen doorgaan nadat je vertrekt. Je kunt de sessie opnieuw betreden.';
 			case 'about_session': return 'Over sessie';
 			case 'live': return 'Live';
 			case 'go_live': return 'ga live';
 			case 'stream_yet_to_start': return 'Stream moet nog beginnen';
-			case 'sit_back_and_relax': return 'Leun achterover en ontspan';
+			case 'sit_back_and_relax': return 'Even geduld';
 			case 'you_are_first_to_join': return 'Jij bent de eerste die meedoet';
 			case 'sit_back_and_relax_till_others_join': return 'leun achterover en ontspan totdat anderen meedoen';
 			case 'ready_to_present': return 'Klaar om te presenteren';
 			case 'select_screenshare_button': return 'Selecteer de schermdeelknop \nin het menu om te beginnen met presenteren.';
-			case 'waiting_for_host_to_join': return 'Wachten tot de host deelneemt';
+			case 'waiting_for_host_to_join': return 'Wachten op de host';
 			case 'setup_audio_before_joining': return 'Stel uw audio en video in voordat u lid wordt';
 			case 'enable_permissions': return 'Machtigingen inschakelen';
 			case 'few_things_before_joining': return 'Nog even een paar dingen voordat je lid wordt';
@@ -647,8 +675,8 @@ extension on _StringsNl {
 			case 'change_streaming_quality': return 'Wijzig de streamingkwaliteit';
 			case 'change_aspect_ratio': return 'Wijzig de beeldverhouding';
 			case 'change': return 'wijziging';
-			case 'reject': return 'afwijzen';
-			case 'accept': return 'accepteren';
+			case 'reject': return 'Afwijzen';
+			case 'accept': return 'Accepteren';
 			case 'requested_to_change_your_role': return 'gevraagd om uw rol te wijzigen in';
 			case 'options': return 'Opties';
 			case 'participants': return 'Deelnemers';
@@ -697,15 +725,15 @@ extension on _StringsNl {
 			case 'you_left_the_stream': return 'Je hebt de stroom verlaten';
 			case 'session_ended': return 'Sessie beëindigd';
 			case 'you_left_the_meeting': return 'Je verliet de vergadering';
-			case 'have_a_nice_day': return 'Prettige dag!';
+			case 'have_a_nice_day': return 'Fijne dag!';
 			case 'left_by_mistake': return 'Per ongeluk achtergelaten?';
 			case 'ended_by_mistake': return 'Per ongeluk beëindigd?';
 			case 'rejoin': return 'Opnieuw deelnemen';
-			case 'restart': return 'Opnieuw opstarten';
+			case 'restart': return 'Herstarten';
 			case 'anonymous': return 'Anoniem';
 			case 'audio_output': return 'Audio-uitvoer';
 			case 'auto': return 'Auto';
-			case 'mute_audio': return 'Audio dempen';
+			case 'mute_audio': return 'Microfoon uit';
 			case 'enter_name': return 'Naam invoeren...';
 			case 'change_name': return 'Naam wijzigen';
 			case 'your_name_will_be_visible': return 'Uw naam zal zichtbaar zijn voor andere deelnemers aan\n de sessie.';
@@ -745,7 +773,17 @@ extension on _StringsNl {
 			case 'video': return 'Video';
 			case 'audio': return 'geluid';
 			case 'remove_from_stage': return 'Verwijderen uit het podium';
-			case 'bring_on_stage': return 'Breng het podium op';
+			case 'bring_on_stage': return 'Op het podium zetten';
+			case 'on': return 'aan';
+			case 'off': return 'uit';
+			case 'microphone': return 'Microfoon';
+			case 'camera': return 'Camera';
+			case 'leave_session': return 'Sessie verlaten';
+			case 'leave_stream': return 'Stroom verlaten';
+			case 'poor_connection': return 'Slechte verbinding';
+			case 'the_video_will_resume_automatically': return ' De video wordt automatisch hervat wanneer de verbinding verbetert';
+			case 'requested_to': return 'heeft verzocht om';
+			case 'track_change_message': return ({required Object name, required Object service, required Object service_status}) => '\'${name}\' heeft verzocht om je \'${service}\' ${service_status} te zetten';
 			default: return null;
 		}
 	}

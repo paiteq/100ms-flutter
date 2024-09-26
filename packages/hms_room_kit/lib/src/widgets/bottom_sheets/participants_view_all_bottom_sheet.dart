@@ -251,7 +251,7 @@ class _ParticipantsViewAllBottomSheetState
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.track?.isMute ?? false ? t.unmute : t.mute} ${t.video}",
+                              "${peerTrackNode.track?.isMute ?? false ? t.on : t.off} ${t.camera}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -280,7 +280,7 @@ class _ParticipantsViewAllBottomSheetState
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.unmute : t.mute} ${t.audio}",
+                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.on : t.off} ${t.audio}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,

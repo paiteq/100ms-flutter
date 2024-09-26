@@ -137,5 +137,14 @@
     "video" : "Video",
     "audio" : "Audio",
     "remove_from_stage":"Remove from Stage",
-    "bring_on_stage" : "Bring on Stage"
+    "bring_on_stage" : "Bring on Stage",
+    "on": "On",
+    "off": "Off",
+    "microphone": "Microphone",
+    "camera": "Camera",
+    "leave_session":"Leave Session",
+    "leave_stream":"Leave Stream",
+    "poor_connection":"Poor connection",
+    "the_video_will_resume_automatically":"The video will resume automatically when the connection improves",
+    "track_change_message": "'$name' requested to $service_status your '$service'"
 }

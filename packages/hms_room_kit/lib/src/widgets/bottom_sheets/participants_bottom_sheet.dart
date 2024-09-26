@@ -263,7 +263,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.track?.isMute ?? false ? t.unmute : t.mute} ${t.video}",
+                              "${peerTrackNode.track?.isMute ?? false ? t.on : t.off} ${t.camera}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -292,7 +292,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.unmute : t.mute} ${t.audio}",
+                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.on : t.off} ${t.microphone}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,

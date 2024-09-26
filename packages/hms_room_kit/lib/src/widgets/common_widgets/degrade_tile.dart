@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 //Project imports
@@ -38,7 +39,7 @@ class DegradeTile extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               HMSSubheadingText(
-                                text: "Poor connection",
+                                text: t.poor_connection,
                                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
                                 fontWeight: FontWeight.w600,
                                 letterSpacing: 0.1,
@@ -46,10 +47,14 @@ class DegradeTile extends StatelessWidget {
                               const SizedBox(
                                 height: 4,
                               ),
-                              HMSSubtitleText(
-                                text:
-                                    "The video will resume\n automatically when the\n connection improves",
-                                textColor: HMSThemeColors.onSurfaceHighEmphasis,
+                              SizedBox(
+                                width: 120,
+                                child: HMSSubtitleText(
+                                  text: t.the_video_will_resume_automatically,
+                                  textColor:
+                                      HMSThemeColors.onSurfaceHighEmphasis,
+                                  maxLines: 5,
+                                ),
                               )
                             ],
                           ),

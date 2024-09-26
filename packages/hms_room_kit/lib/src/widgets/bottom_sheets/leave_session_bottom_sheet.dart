@@ -83,7 +83,7 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                           },
                           title: HMSTitleText(
                             text:
-                                "${t.leave} ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.session : t.stream}",
+                                "${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.leave_session : t.leave_stream}",
                             textColor: HMSThemeColors.alertErrorDefault,
                             letterSpacing: 0.15,
                             fontSize: 20,
@@ -102,7 +102,7 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                             textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                           ),
                           buttonText:
-                              "${t.leave} ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.session : t.stream}",
+                              "${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.leave_session : t.leave_stream}",
                         ),
                       ),
                     )
