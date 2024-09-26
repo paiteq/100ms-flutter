@@ -2,6 +2,7 @@ library;
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -24,7 +25,7 @@ class PeerName extends StatelessWidget {
                 Tuple2(peerTrackNode.peer.name, peerTrackNode.peer.isLocal),
             builder: (_, data, __) {
               return HMSSubheadingText(
-                text: "${data.item1.trim()}${data.item2 ? " (You)" : ""}",
+                text: "${data.item1.trim()}${data.item2 ? " (${t.you})" : ""}",
                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
               );
             }));

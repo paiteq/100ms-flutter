@@ -471,7 +471,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                                                                           constraints:
                                                                               BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.6),
                                                                           child: HMSTitleText(
-                                                                              text: peerName + ((participantsPerRole.item2![peerIndex].peer.isLocal) ? " (You)" : ""),
+                                                                              text: peerName + ((participantsPerRole.item2![peerIndex].peer.isLocal) ? " (${t.you})" : ""),
                                                                               fontSize: 14,
                                                                               lineHeight: 20,
                                                                               letterSpacing: 0.1,

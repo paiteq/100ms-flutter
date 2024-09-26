@@ -474,7 +474,7 @@ class _ParticipantsViewAllBottomSheetState
                                                               return HMSTitleText(
                                                                   text: peerName +
                                                                       ((data.item1[widget.role]![peerIndex].peer.isLocal)
-                                                                          ? " (You)"
+                                                                          ? " (${t.you})"
                                                                           : ""),
                                                                   fontSize: 14,
                                                                   lineHeight:
