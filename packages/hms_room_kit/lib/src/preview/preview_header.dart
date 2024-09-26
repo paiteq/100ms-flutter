@@ -89,9 +89,7 @@ class PreviewHeader extends StatelessWidget {
               height: 4,
             ),
             HMSSubheadingText(
-                text: HMSRoomLayout.roleLayoutData?.screens?.preview
-                        ?.previewHeader?.subTitle ??
-                    "Setup your audio and video before joining",
+                text: t.setup_audio_before_joining,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis),
 
             ///Here we use SizedBox to keep the UI consistent

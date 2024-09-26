@@ -34,7 +34,7 @@ class _ChatBottomSheetState extends State<ChatBottomSheet> {
   String? currentlySelectedpeerId;
 
   final ScrollController _scrollController = ScrollController();
-  final DateFormat formatter = DateFormat('hh:mm a');
+  final DateFormat formatter = DateFormat('HH:mm');
 
   @override
   void initState() {

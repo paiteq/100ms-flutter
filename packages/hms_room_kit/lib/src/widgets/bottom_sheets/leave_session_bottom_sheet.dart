@@ -3,6 +3,7 @@ library;
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 ///Project imports
@@ -59,10 +60,9 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                         HMSThemeColors.onSurfaceHighEmphasis, BlendMode.srcIn),
                     semanticsLabel: "leave_room_button",
                   ),
-                  title: "Leave",
+                  title: t.leave,
                   titleColor: HMSThemeColors.onSurfaceHighEmphasis,
-                  subTitle:
-                      "Others will continue after you leave. You can join the session again.",
+                  subTitle: t.others_can_contine_after_you_leave,
                   subTitleColor: HMSThemeColors.onSurfaceMediumEmphasis,
                   onTap: () => {
                     Navigator.pop(context),
@@ -83,7 +83,7 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                           },
                           title: HMSTitleText(
                             text:
-                                "Leave ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? "Session" : "Stream"}",
+                                "${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.leave_session : t.leave_stream}",
                             textColor: HMSThemeColors.alertErrorDefault,
                             letterSpacing: 0.15,
                             fontSize: 20,
@@ -97,13 +97,12 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                                 BlendMode.srcIn),
                           ),
                           subTitle: HMSSubheadingText(
-                            text:
-                                "Others will continue after you leave. You can join the session again.",
+                            text: t.others_can_contine_after_you_leave,
                             maxLines: 2,
                             textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                           ),
                           buttonText:
-                              "Leave ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? "Session" : "Stream"}",
+                              "${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.leave_session : t.leave_stream}",
                         ),
                       ),
                     )
@@ -121,15 +120,15 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                                   .hlsStreaming ??
                               false) &&
                           widget.meetingStore.hasHlsStarted)
-                      ? "End Stream"
-                      : "End Session",
+                      ? t.end_stream
+                      : t.end_session,
                   titleColor: HMSThemeColors.alertErrorBrighter,
                   subTitle: ((widget.meetingStore.localPeer?.role.permissions
                                   .hlsStreaming ??
                               false) &&
                           widget.meetingStore.hasHlsStarted)
-                      ? "The stream will end for everyone after they’ve watched it."
-                      : "The session will end for everyone in the room immediately.",
+                      ? t.this_stream_will_end
+                      : t.this_session_will_end,
                   subTitleColor: HMSThemeColors.alertErrorBright,
                   onTap: () => {
                     Navigator.pop(context),
@@ -165,8 +164,8 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                                             .permissions.hlsStreaming ??
                                         false) &&
                                     widget.meetingStore.hasHlsStarted)
-                                ? "End Stream"
-                                : "End Session",
+                                ? t.end_stream
+                                : t.end_session,
                             textColor: HMSThemeColors.alertErrorDefault,
                             letterSpacing: 0.15,
                             fontSize: 20,
@@ -184,8 +183,8 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                                             .permissions.hlsStreaming ??
                                         false) &&
                                     widget.meetingStore.hasHlsStarted)
-                                ? "The stream will end for everyone after they’ve watched it."
-                                : "The session will end for everyone in the room immediately.",
+                                ? t.this_stream_will_end
+                                : t.this_session_will_end,
                             maxLines: 3,
                             textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                           ),
@@ -193,8 +192,8 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                                           .permissions.hlsStreaming ??
                                       false) &&
                                   widget.meetingStore.hasHlsStarted)
-                              ? "End Stream"
-                              : "End Session",
+                              ? t.end_stream
+                              : t.end_session,
                         ),
                       ),
                     )
@@ -224,13 +223,12 @@ class _LeaveSessionBottomSheetState extends State<LeaveSessionBottomSheet> {
                     HMSThemeColors.alertErrorDefault, BlendMode.srcIn),
               ),
               subTitle: HMSSubheadingText(
-                text:
-                    "Others will continue after you leave. You can join the session again.",
+                text: t.others_can_contine_after_you_leave,
                 maxLines: 2,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
               ),
               buttonText:
-                  "Leave ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? "Session" : "Stream"}",
+                  "${t.leave} ${HMSRoomLayout.peerType == PeerRoleType.conferencing ? t.session : t.stream}",
             ),
           );
   }

@@ -1,5 +1,6 @@
 // Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 // Project imports
@@ -27,8 +28,15 @@ class TrackChangeRequestDialog extends StatefulWidget {
 class TrackChangeRequestDialogState extends State<TrackChangeRequestDialog> {
   @override
   Widget build(BuildContext context) {
-    String message =
-        "‘${widget.trackChangeRequest.requestBy.name}’ requested to ${(widget.trackChangeRequest.mute) ? "mute" : "unmute"} your ‘${(widget.trackChangeRequest.track.kind == HMSTrackKind.kHMSTrackKindAudio) ? "Audio’" : "Video’"}${(widget.isAudioModeOn) ? " and switch to video view" : ""}";
+    String message = t.track_change_message(
+        name: widget.trackChangeRequest.requestBy.name,
+        service_status: widget.trackChangeRequest.mute ? t.off : t.on,
+        service: widget.trackChangeRequest.track.kind ==
+                HMSTrackKind.kHMSTrackKindAudio
+            ? t.microphone
+            : t.camera);
+    // String message =
+    // "‘${widget.trackChangeRequest.requestBy.name}’ requested to ${(widget.trackChangeRequest.mute) ? "mute" : "unmute"} your ‘${(widget.trackChangeRequest.track.kind == HMSTrackKind.kHMSTrackKindAudio) ? "Audio’" : "Video’"}${(widget.isAudioModeOn) ? " and switch to video view" : ""}";
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -63,7 +71,7 @@ class TrackChangeRequestDialogState extends State<TrackChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child:
-                    HMSTitleText(text: 'Reject', textColor: themeDefaultColor),
+                    HMSTitleText(text: t.reject, textColor: themeDefaultColor),
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -82,7 +90,7 @@ class TrackChangeRequestDialogState extends State<TrackChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child: HMSTitleText(
-                  text: 'Accept',
+                  text: t.accept,
                   textColor: themeDefaultColor,
                 ),
               ),

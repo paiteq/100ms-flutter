@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_cross_button.dart';
 import 'package:provider/provider.dart';
 
@@ -89,7 +90,7 @@ class _ChangeNameBottomSheetState extends State<ChangeNameBottomSheet> {
                       width: 8,
                     ),
                     HMSTitleText(
-                      text: "Change Name",
+                      text: t.change_name,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       letterSpacing: 0.15,
                     )
@@ -112,8 +113,7 @@ class _ChangeNameBottomSheetState extends State<ChangeNameBottomSheet> {
             ///We show the privacy info only if the [showPrivacyInfo] is true
             if (widget.showPrivacyInfo)
               HMSSubheadingText(
-                text:
-                    "Your name will be visible to other participants in\n the session.",
+                text: t.your_name_will_be_visible,
                 maxLines: 2,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
               ),
@@ -145,7 +145,7 @@ class _ChangeNameBottomSheetState extends State<ChangeNameBottomSheet> {
                     fillColor: HMSThemeColors.surfaceDefault,
                     filled: true,
                     hintText: nameController.text.isEmpty
-                        ? 'Enter Name...'
+                        ? t.enter_name
                         : nameController.text,
                     hintStyle: HMSTextStyle.setTextStyle(
                         color: HMSThemeColors.onSurfaceLowEmphasis,
@@ -180,7 +180,7 @@ class _ChangeNameBottomSheetState extends State<ChangeNameBottomSheet> {
                         borderRadius: BorderRadius.all(Radius.circular(8))),
                     child: Center(
                       child: HMSTitleText(
-                        text: "Change",
+                        text: t.change,
                         textColor: (nameController.text.trim().isEmpty ||
                                 context.read<MeetingStore>().localPeer?.name ==
                                     nameController.text.trim())

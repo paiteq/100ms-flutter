@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/poll_and_quiz_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 import 'package:badges/badges.dart' as badge;
@@ -56,7 +57,7 @@ class _HLSMoreOptionsBottomSheetBottomSheetState
                     Row(
                       children: [
                         HMSTitleText(
-                          text: "Options",
+                          text: t.options,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           letterSpacing: 0.15,
                         )
@@ -135,7 +136,7 @@ class _HLSMoreOptionsBottomSheetBottomSheetState
                           ),
                         ),
                       ),
-                      optionText: "Participants"),
+                      optionText: t.participants),
                 if (Constant.prebuiltOptions?.userName == null)
                   MoreOptionItem(
                       onTap: () async {
@@ -167,7 +168,7 @@ class _HLSMoreOptionsBottomSheetBottomSheetState
                             HMSThemeColors.onSurfaceHighEmphasis,
                             BlendMode.srcIn),
                       ),
-                      optionText: "Change Name"),
+                      optionText: t.change_name),
 
                 ///This renders the polls and quizzes option
                 if ((context
@@ -210,7 +211,7 @@ class _HLSMoreOptionsBottomSheetBottomSheetState
                             HMSThemeColors.onSurfaceHighEmphasis,
                             BlendMode.srcIn),
                       ),
-                      optionText: "Polls and Quizzes"),
+                      optionText: t.polls_and_quizes),
               ],
             ),
           ],

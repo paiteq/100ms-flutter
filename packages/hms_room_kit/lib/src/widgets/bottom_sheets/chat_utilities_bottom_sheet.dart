@@ -4,6 +4,7 @@ library;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -63,7 +64,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HMSTitleText(
-                    text: "Message Options",
+                    text: t.message_options,
                     textColor: HMSThemeColors.onSurfaceHighEmphasis),
                 const HMSCrossButton()
               ],
@@ -104,7 +105,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
                         HMSThemeColors.onSurfaceHighEmphasis, BlendMode.srcIn),
                   ),
                   title: HMSSubheadingText(
-                      text: isPinned ? "Unpin" : "Pin",
+                      text: isPinned ? t.unpin : t.pin,
                       letterSpacing: 0.1,
                       fontWeight: FontWeight.w600,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis)),
@@ -126,7 +127,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
                       HMSThemeColors.onSurfaceHighEmphasis, BlendMode.srcIn),
                 ),
                 title: HMSSubheadingText(
-                    text: "Copy Text",
+                    text: t.copy_text,
                     letterSpacing: 0.1,
                     fontWeight: FontWeight.w600,
                     textColor: HMSThemeColors.onSurfaceHighEmphasis)),
@@ -149,7 +150,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
                         HMSThemeColors.onSurfaceHighEmphasis, BlendMode.srcIn),
                   ),
                   title: HMSSubheadingText(
-                      text: "Hide for Everyone",
+                      text: t.hide_for_everyone,
                       letterSpacing: 0.1,
                       fontWeight: FontWeight.w600,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis)),
@@ -177,7 +178,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
                         HMSThemeColors.alertErrorDefault, BlendMode.srcIn),
                   ),
                   title: HMSSubheadingText(
-                      text: isBlocked ? "Unblock from Chat" : "Block from Chat",
+                      text: isBlocked ? t.unblock_from_chat : t.block_from_chat,
                       letterSpacing: 0.1,
                       fontWeight: FontWeight.w600,
                       textColor: HMSThemeColors.alertErrorDefault)),
@@ -210,7 +211,7 @@ class _ChatUtilitiesBottomSheetState extends State<ChatUtilitiesBottomSheet> {
                         HMSThemeColors.alertErrorDefault, BlendMode.srcIn),
                   ),
                   title: HMSSubheadingText(
-                      text: "Remove Participant",
+                      text: t.remove_participant,
                       letterSpacing: 0.1,
                       fontWeight: FontWeight.w600,
                       textColor: HMSThemeColors.alertErrorDefault)),

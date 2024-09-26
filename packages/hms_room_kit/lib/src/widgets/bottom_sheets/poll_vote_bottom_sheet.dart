@@ -6,6 +6,7 @@ import 'dart:math' as math;
 
 ///Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/leaderboard_widgets/leaderboard_voter_summary.dart';
 import 'package:hms_room_kit/src/widgets/poll_widgets/leaderboard_widgets/quiz_leaderboard.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -337,7 +338,7 @@ class _PollVoteBottomSheetState extends State<PollVoteBottomSheet> {
                                 },
                                 childWidget: HMSTitleText(
                                     text:
-                                        "End ${widget.isPoll ? "Poll" : "Quiz"}",
+                                        "End ${widget.isPoll ? t.poll : t.quiz}",
                                     textColor:
                                         HMSThemeColors.onPrimaryHighEmphasis),
                                 buttonBackgroundColor:

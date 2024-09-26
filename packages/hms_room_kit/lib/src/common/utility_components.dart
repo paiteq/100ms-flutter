@@ -3,6 +3,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/leave_session_bottom_sheet.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:collection/collection.dart';
@@ -182,8 +183,7 @@ class UtilityComponents {
             ],
           ),
         ),
-        content: Text(
-            "Others will continue after you leave. You can join the studio again.",
+        content: Text(t.others_can_contine_after_you_leave,
             style: HMSTextStyle.setTextStyle(
                 color: themeHintColor,
                 fontSize: 14,
@@ -213,7 +213,7 @@ class UtilityComponents {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8.0, vertical: 12),
                       child: HMSTitleText(
-                          text: 'Don’t Leave', textColor: themeDefaultColor),
+                          text: t.dont_leave, textColor: themeDefaultColor),
                     )),
               ),
               const SizedBox(
@@ -237,7 +237,7 @@ class UtilityComponents {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 25.0, vertical: 12),
                     child: HMSTitleText(
-                      text: 'Leave',
+                      text: t.leave,
                       textColor: hmsWhiteColor,
                     ),
                   ),
@@ -293,7 +293,7 @@ class UtilityComponents {
             actions: [
               ElevatedButton(
                 child: Text(
-                  'OK',
+                  t.ok,
                   style: HMSTextStyle.setTextStyle(),
                 ),
                 onPressed: () {
@@ -334,7 +334,7 @@ class UtilityComponents {
               actions: [
                 ElevatedButton(
                   child: Text(
-                    'Cancel',
+                    t.cancel,
                     style: HMSTextStyle.setTextStyle(),
                   ),
                   onPressed: () {
@@ -343,7 +343,7 @@ class UtilityComponents {
                 ),
                 ElevatedButton(
                   child: Text(
-                    'OK',
+                    t.ok,
                     style: HMSTextStyle.setTextStyle(),
                   ),
                   onPressed: () {
@@ -374,12 +374,12 @@ class UtilityComponents {
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text("Recording"),
+                    Text(t.recording),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Single file per layer",
+                          t.single_file,
                           style: HMSTextStyle.setTextStyle(
                             color: iconColor,
                           ),
@@ -399,7 +399,7 @@ class UtilityComponents {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Video on Demand",
+                          t.view_on_demand,
                           style: HMSTextStyle.setTextStyle(
                             color: iconColor,
                           ),
@@ -420,7 +420,7 @@ class UtilityComponents {
                 actions: [
                   ElevatedButton(
                     child: Text(
-                      'Cancel',
+                      t.cancel,
                       style: HMSTextStyle.setTextStyle(),
                     ),
                     onPressed: () {
@@ -429,7 +429,7 @@ class UtilityComponents {
                   ),
                   ElevatedButton(
                     child: Text(
-                      'OK',
+                      t.ok,
                       style: HMSTextStyle.setTextStyle(),
                     ),
                     onPressed: () {
@@ -458,7 +458,7 @@ class UtilityComponents {
                     borderRadius: BorderRadius.circular(12)),
                 backgroundColor: themeBottomSheetColor,
                 title: Text(
-                  "Select Role for Mute",
+                  t.select_role_for_mute,
                   style: HMSTextStyle.setTextStyle(
                     color: iconColor,
                   ),
@@ -503,7 +503,7 @@ class UtilityComponents {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "Mute All",
+                                t.mute_all,
                                 style: HMSTextStyle.setTextStyle(
                                     color: Colors.red),
                               ),
@@ -539,7 +539,7 @@ class UtilityComponents {
                                     Navigator.pop(context);
                                   },
                                   child: Text(
-                                    "Cancel",
+                                    t.cancel,
                                     style: HMSTextStyle.setTextStyle(),
                                   )),
                               ElevatedButton(
@@ -568,7 +568,7 @@ class UtilityComponents {
                                     Navigator.pop(context);
                                   },
                                   child: Text(
-                                    "Mute",
+                                    t.mute,
                                     style: HMSTextStyle.setTextStyle(),
                                   ))
                             ],
@@ -597,7 +597,7 @@ class UtilityComponents {
                     borderRadius: BorderRadius.circular(12)),
                 backgroundColor: themeBottomSheetColor,
                 title: Text(
-                  "Select roles for change role",
+                  t.select_role_for_change_role,
                   style: HMSTextStyle.setTextStyle(
                     color: iconColor,
                   ),
@@ -639,7 +639,7 @@ class UtilityComponents {
                                 );
                               }),
                           Text(
-                            "Change roles to",
+                            t.change_role_to,
                             style: HMSTextStyle.setTextStyle(
                               color: iconColor,
                             ),
@@ -703,7 +703,7 @@ class UtilityComponents {
                                     Navigator.pop(context);
                                   },
                                   child: Text(
-                                    "Cancel",
+                                    t.cancel,
                                     style: HMSTextStyle.setTextStyle(
                                         fontWeight: FontWeight.w600),
                                   )),
@@ -725,7 +725,7 @@ class UtilityComponents {
                                   onPressed: () {
                                     if (selectedRoles.isEmpty) {
                                       Utilities.showToast(
-                                          "Please select a role");
+                                          t.please_select_a_role);
                                     } else {
                                       meetingStore.changeRoleOfPeersWithRoles(
                                           toRole, selectedRoles);
@@ -733,7 +733,7 @@ class UtilityComponents {
                                     }
                                   },
                                   child: Text(
-                                    "Change Role",
+                                    t.change_role,
                                     style: HMSTextStyle.setTextStyle(
                                         fontWeight: FontWeight.w600),
                                   ))
@@ -779,7 +779,7 @@ class UtilityComponents {
                     CheckboxListTile(
                         contentPadding: EdgeInsets.zero,
                         title: Text(
-                          "Recording",
+                          t.recording,
                           style: HMSTextStyle.setTextStyle(
                             color: iconColor,
                           ),
@@ -817,7 +817,7 @@ class UtilityComponents {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 6, vertical: 12),
-                            child: Text('Cancel',
+                            child: Text(t.cancel,
                                 style: HMSTextStyle.setTextStyle(
                                     color: themeDefaultColor,
                                     fontSize: 16,
@@ -899,7 +899,7 @@ class UtilityComponents {
                 width: 5,
               ),
               Text(
-                "End Room",
+                t.end_room,
                 style: HMSTextStyle.setTextStyle(
                     color: errorColor,
                     fontSize: 20,
@@ -971,7 +971,7 @@ class UtilityComponents {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 8.0, vertical: 12),
                     child: Text(
-                      "End Room",
+                      t.end_room,
                       style: HMSTextStyle.setTextStyle(
                           color: hmsWhiteColor,
                           fontSize: 16,
@@ -1283,7 +1283,7 @@ class UtilityComponents {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 6, vertical: 12),
-                          child: Text('Cancel',
+                          child: Text(t.cancel,
                               style: HMSTextStyle.setTextStyle(
                                   color: themeDefaultColor,
                                   fontSize: 16,
@@ -1437,7 +1437,7 @@ class UtilityComponents {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12, horizontal: 10),
-                            child: Text('Cancel',
+                            child: Text(t.cancel,
                                 style: HMSTextStyle.setTextStyle(
                                     color: themeDefaultColor,
                                     fontSize: 16,

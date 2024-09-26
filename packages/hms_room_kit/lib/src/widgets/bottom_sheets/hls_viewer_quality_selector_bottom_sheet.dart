@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/hls_viewer/hls_player_store.dart';
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
 import 'package:hms_room_kit/src/meeting/meeting_store.dart';
@@ -59,7 +60,7 @@ class _HLSViewerQualitySelectorBottomSheetState
                           Row(
                             children: [
                               HMSTitleText(
-                                text: "Quality",
+                                text: t.quality,
                                 textColor: HMSThemeColors.onSurfaceHighEmphasis,
                                 letterSpacing: 0.15,
                               ),

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_text_style.dart';
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -56,7 +57,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                 Row(
                   children: [
                     HMSTitleText(
-                      text: "Settings",
+                      text: t.settings,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       fontSize: 20,
                       lineHeight: 24 / 20,
@@ -141,7 +142,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                               ),
                               const SizedBox(height: 10),
                               Text(
-                                "Participants",
+                                t.participants,
                                 semanticsLabel: "participants_button",
                                 style: HMSTextStyle.setTextStyle(
                                     fontSize: 14,
@@ -187,7 +188,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                                 height: 10,
                               ),
                               Text(
-                                "Audio Settings",
+                                t.audio_settings,
                                 semanticsLabel: "fl_audio_settings",
                                 style: HMSTextStyle.setTextStyle(
                                     fontSize: 14,
@@ -232,8 +233,8 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                             ),
                             title: HMSSubheadingText(
                               text: isScreenShareOn
-                                  ? "Stop Screen Share"
-                                  : "Share Screen",
+                                  ? t.stop_screen_share
+                                  : t.share_screen,
                               textColor: HMSThemeColors.onSurfaceHighEmphasis,
                               letterSpacing: 0.15,
                               fontWeight: FontWeight.w600,
@@ -248,7 +249,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                       String name =
                           await UtilityComponents.showNameChangeDialog(
                               context: context,
-                              placeholder: "Enter Name",
+                              placeholder: t.enter_name,
                               prefilledValue: context
                                       .read<MeetingStore>()
                                       .localPeer
@@ -268,7 +269,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                           BlendMode.srcIn),
                     ),
                     title: HMSSubheadingText(
-                      text: "Change Name",
+                      text: t.change_name,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       letterSpacing: 0.15,
                       fontWeight: FontWeight.w600,
@@ -293,8 +294,8 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                     ),
                     title: HMSSubheadingText(
                       text: meetingStore.isSpeakerOn
-                          ? "Mute Room"
-                          : "Unmute Room",
+                          ? t.mute_room
+                          : t.unmute_room,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       letterSpacing: 0.15,
                       fontWeight: FontWeight.w600,
@@ -317,8 +318,8 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                       ),
                       title: HMSSubheadingText(
                         text: meetingStore.isRaisedHand
-                            ? "Lower Hand"
-                            : "Raise Hand",
+                            ? t.lower_hand
+                            : t.raise_hand,
                         textColor: HMSThemeColors.onSurfaceHighEmphasis,
                         fontWeight: FontWeight.w600,
                       )),
@@ -529,8 +530,8 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                               ),
                               title: HMSSubheadingText(
                                 text: isBrowserRecording
-                                    ? "Stop Recording"
-                                    : "Start Recording",
+                                    ? t.stop_recording
+                                    : t.start_recording,
                                 textColor: isBrowserRecording
                                     ? HMSThemeColors.alertErrorDefault
                                     : HMSThemeColors.onSurfaceHighEmphasis,
@@ -688,7 +689,7 @@ class _MoreSettingsBottomSheetState extends State<MoreSettingsBottomSheet> {
                             BlendMode.srcIn),
                       ),
                       title: HMSSubheadingText(
-                        text: "End Room",
+                        text: t.end_room,
                         textColor: HMSThemeColors.onSurfaceHighEmphasis,
                         letterSpacing: 0.15,
                         fontWeight: FontWeight.w600,

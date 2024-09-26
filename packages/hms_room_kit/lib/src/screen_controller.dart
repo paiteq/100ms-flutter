@@ -3,15 +3,18 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/layout_api/hms_room_layout.dart';
 import 'package:hms_room_kit/src/preview_meeting_flow.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
+import 'package:flutter_localizations/src/material_localizations.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
 import 'package:hms_room_kit/src/common/utility_components.dart';
 import 'package:hms_room_kit/src/hmssdk_interactor.dart';
 import 'package:hms_room_kit/src/preview/preview_permissions.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///[ScreenController] is the controller for the preview screen
 ///It takes following parameters:
@@ -34,6 +37,7 @@ class ScreenController extends StatefulWidget {
   ///in addition to leaving the room when the leave room button is pressed
   final Function? onLeave;
   final GoRouter? router;
+  final String? languageCode;
 
   const ScreenController({
     super.key,
@@ -42,6 +46,7 @@ class ScreenController extends StatefulWidget {
     this.onLeave,
     this.authToken,
     this.router,
+    this.languageCode,
   });
   @override
   State<ScreenController> createState() => _ScreenControllerState();
@@ -190,24 +195,30 @@ class _ScreenControllerState extends State<ScreenController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: (isLoading)
-          ? Center(
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                color: HMSThemeColors.primaryDefault,
-              ),
-            )
-          : isPermissionGranted
-              ? PreviewMeetingFlow(
-                  prebuiltOptions: widget.options,
-                  hmsSDKInteractor: _hmsSDKInteractor,
-                  tokenData: tokenData,
-                  router: widget.router,
-                )
-              : PreviewPermissions(
-                  options: widget.options,
-                  callback: _isPermissionGrantedCallback),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      supportedLocales: [Locale('nl'), Locale('en')],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      locale: Locale(widget.languageCode.toString()),
+      builder: (context, child) => Scaffold(
+        body: (isLoading)
+            ? Center(
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: HMSThemeColors.primaryDefault,
+                ),
+              )
+            : isPermissionGranted
+                ? PreviewMeetingFlow(
+                    prebuiltOptions: widget.options,
+                    hmsSDKInteractor: _hmsSDKInteractor,
+                    tokenData: tokenData,
+                    router: widget.router,
+                  )
+                : PreviewPermissions(
+                    options: widget.options,
+                    callback: _isPermissionGrantedCallback),
+      ),
     );
   }
 }

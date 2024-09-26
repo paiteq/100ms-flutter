@@ -2,6 +2,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 //Project imports
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
@@ -62,7 +63,7 @@ class ChangeRoleOptionDialogState extends State<ChangeRoleOptionDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HMSTitleText(
-            text: "Change Role",
+            text: t.change_role,
             fontSize: 20,
             letterSpacing: 0.15,
             textColor: themeDefaultColor,
@@ -132,7 +133,7 @@ class ChangeRoleOptionDialogState extends State<ChangeRoleOptionDialog> {
                 SizedBox(
                     width: width * 0.5,
                     child: Text(
-                      "Request permission from the user",
+                      t.request_permission_from_user,
                       style: HMSTextStyle.setTextStyle(
                         color: themeDefaultColor,
                         fontSize: 14,
@@ -163,7 +164,7 @@ class ChangeRoleOptionDialogState extends State<ChangeRoleOptionDialog> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                  child: Text('Cancel',
+                  child: Text(t.cancel,
                       style: HMSTextStyle.setTextStyle(
                           color: themeDefaultColor,
                           fontSize: 16,
@@ -182,7 +183,7 @@ class ChangeRoleOptionDialogState extends State<ChangeRoleOptionDialog> {
               onPressed: () => {
                 if (valueChoose == null)
                   {
-                    Utilities.showToast("Please select a role"),
+                    Utilities.showToast(t.please_select_a_role),
                   }
                 else
                   {
@@ -194,7 +195,7 @@ class ChangeRoleOptionDialogState extends State<ChangeRoleOptionDialog> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
                 child: Text(
-                  'Change',
+                  t.change,
                   style: HMSTextStyle.setTextStyle(
                       color: themeDefaultColor,
                       fontSize: 16,

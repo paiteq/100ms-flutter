@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_subheading_text.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_title_text.dart';
@@ -47,7 +48,7 @@ class LeaveSessionTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HMSTitleText(
-                    text: title ?? "Leave",
+                    text: title ?? t.leave,
                     textColor:
                         titleColor ?? HMSThemeColors.onSurfaceHighEmphasis,
                     fontSize: 20,
@@ -59,8 +60,7 @@ class LeaveSessionTile extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.78,
                     child: HMSSubheadingText(
-                        text: subTitle ??
-                            "Others will continue after you leave. You can join the session again.",
+                        text: subTitle ?? t.others_can_contine_after_you_leave,
                         maxLines: 2,
                         textColor: subTitleColor ??
                             HMSThemeColors.onSurfaceMediumEmphasis),

@@ -52,7 +52,7 @@ class _PreviewForRoleBottomSheetState extends State<PreviewForRoleBottomSheet> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     HMSTitleText(
-                      text: "You’re invited to join the stage",
+                      text: t.you_are_invited_to_join_stage,
                       textColor: HMSThemeColors.onSurfaceHighEmphasis,
                       fontSize: 20,
                       letterSpacing: 0.15,
@@ -66,7 +66,7 @@ class _PreviewForRoleBottomSheetState extends State<PreviewForRoleBottomSheet> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     HMSTitleText(
-                      text: "Setup your audio and video before joining",
+                      text: t.setup_audio_before_joining,
                       textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                       fontSize: 14,
                       lineHeight: 20,
@@ -228,7 +228,7 @@ class _PreviewForRoleBottomSheetState extends State<PreviewForRoleBottomSheet> {
                       height: 48,
                       child: Center(
                         child: HMSTitleText(
-                            text: "Decline",
+                            text: t.decline,
                             textColor: HMSThemeColors.onSurfaceHighEmphasis),
                       ),
                     ))

@@ -7,6 +7,7 @@ import 'dart:developer';
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
@@ -197,8 +198,8 @@ class _ParticipantsViewAllBottomSheetState
                         ),
                         HMSTitleText(
                           text: isOnStageRole
-                              ? "Remove from Stage"
-                              : "Bring on Stage",
+                              ? t.remove_from_stage
+                              : t.bring_on_stage,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -221,7 +222,7 @@ class _ParticipantsViewAllBottomSheetState
                           width: 8,
                         ),
                         HMSTitleText(
-                          text: "Lower Hand",
+                          text: t.lower_hand,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -250,7 +251,7 @@ class _ParticipantsViewAllBottomSheetState
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.track?.isMute ?? false ? "Unmute" : "Mute"} Video",
+                              "${peerTrackNode.track?.isMute ?? false ? t.on : t.off} ${t.camera}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -279,7 +280,7 @@ class _ParticipantsViewAllBottomSheetState
                         ),
                         HMSTitleText(
                           text:
-                              "${peerTrackNode.audioTrack?.isMute ?? false ? "Unmute" : "Mute"} Audio",
+                              "${peerTrackNode.audioTrack?.isMute ?? false ? t.on : t.off} ${t.audio}",
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,
@@ -302,7 +303,7 @@ class _ParticipantsViewAllBottomSheetState
                           width: 8,
                         ),
                         HMSTitleText(
-                          text: "Remove Participant",
+                          text: t.remove_participant,
                           textColor: HMSThemeColors.alertErrorDefault,
                           fontSize: 14,
                           lineHeight: 20,
@@ -353,7 +354,7 @@ class _ParticipantsViewAllBottomSheetState
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: HMSTitleText(
-                          text: "Participants",
+                          text: t.participants,
                           letterSpacing: 0.15,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                         ),
@@ -473,7 +474,7 @@ class _ParticipantsViewAllBottomSheetState
                                                               return HMSTitleText(
                                                                   text: peerName +
                                                                       ((data.item1[widget.role]![peerIndex].peer.isLocal)
-                                                                          ? " (You)"
+                                                                          ? " (${t.you})"
                                                                           : ""),
                                                                   fontSize: 14,
                                                                   lineHeight:

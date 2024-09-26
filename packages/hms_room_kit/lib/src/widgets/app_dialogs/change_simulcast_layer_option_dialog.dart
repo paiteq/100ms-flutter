@@ -2,6 +2,7 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 //Project imports
@@ -55,7 +56,7 @@ class ChangeSimulcastLayerOptionDialogState
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HMSTitleText(
-            text: "Change Streaming Quality",
+            text: t.change_streaming_quality,
             fontSize: 20,
             letterSpacing: 0.15,
             textColor: themeDefaultColor,
@@ -126,7 +127,7 @@ class ChangeSimulcastLayerOptionDialogState
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                  child: Text('Cancel',
+                  child: Text(t.cancel,
                       style: HMSTextStyle.setTextStyle(
                           color: themeDefaultColor,
                           fontSize: 16,
@@ -157,7 +158,7 @@ class ChangeSimulcastLayerOptionDialogState
                 padding:
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
                 child: Text(
-                  'Change',
+                  t.change,
                   style: HMSTextStyle.setTextStyle(
                       color: themeDefaultColor,
                       fontSize: 16,

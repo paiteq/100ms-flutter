@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 
 ///Project imports
@@ -80,7 +81,7 @@ class _ChatParticipantsTabBarState extends State<ChatParticipantsTabBar>
                               Tab(
                                 child: HMSSubheadingText(
                                     text: HMSRoomLayout.chatData?.chatTitle ??
-                                        "Chat",
+                                        t.chat,
                                     fontWeight: FontWeight.w600,
                                     textColor: _controller.index == 0
                                         ? HMSThemeColors.onSurfaceHighEmphasis
@@ -88,7 +89,7 @@ class _ChatParticipantsTabBarState extends State<ChatParticipantsTabBar>
                               ),
                               Tab(
                                 child: HMSSubheadingText(
-                                    text: "Participants",
+                                    text: t.participants,
                                     fontWeight: FontWeight.w600,
                                     textColor: _controller.index == 1
                                         ? HMSThemeColors.onSurfaceHighEmphasis
@@ -139,8 +140,8 @@ class _ChatParticipantsTabBarState extends State<ChatParticipantsTabBar>
                                             text: context
                                                     .read<MeetingStore>()
                                                     .chatControls["enabled"]
-                                                ? "Pause Chat"
-                                                : "Resume Chat",
+                                                ? t.pause_chat
+                                                : t.resume_chat,
                                             textColor: HMSThemeColors
                                                 .onSurfaceHighEmphasis,
                                             fontSize: 14,

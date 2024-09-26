@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_cross_button.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +71,7 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
                                     MediaQuery.of(context).size.width - 100),
                             child: HMSTitleText(
                               text:
-                                  "${widget.meetingStore.localPeer?.name} (You)",
+                                  "${widget.meetingStore.localPeer?.name} (${t.you})",
                               textColor: HMSThemeColors.onSurfaceHighEmphasis,
                               letterSpacing: 0.15,
                             ),
@@ -199,7 +200,7 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
                                 BlendMode.srcIn),
                           ),
                           title: HMSSubheadingText(
-                              text: "Change Name",
+                              text: t.change_name,
                               textColor: HMSThemeColors.onSurfaceHighEmphasis)),
                     if (widget.isInsetTile)
                       ListTile(
@@ -223,7 +224,7 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
                                 BlendMode.srcIn),
                           ),
                           title: HMSSubheadingText(
-                              text: "Minimize Your Tile",
+                              text: t.minimize_tile,
                               textColor:
                                   widget.meetingStore.peerTracks.length > 1
                                       ? HMSThemeColors.onSurfaceHighEmphasis

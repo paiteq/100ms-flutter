@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 ///Project imports
@@ -129,7 +130,7 @@ class SavedQuestionWidget extends StatelessWidget {
                       editCallback(pollQuestionBuilder);
                     },
                     child: HMSTitleText(
-                        text: "Edit",
+                        text: t.edit,
                         textColor: HMSThemeColors.onSecondaryHighEmphasis))
               ],
             )

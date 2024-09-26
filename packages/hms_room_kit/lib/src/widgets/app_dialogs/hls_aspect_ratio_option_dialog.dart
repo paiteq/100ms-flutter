@@ -1,6 +1,7 @@
 //Package imports
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_text_style.dart';
 import 'package:hms_room_kit/src/common/app_color.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_dropdown.dart';
@@ -50,7 +51,7 @@ class AspectRatioOptionDialogState extends State<AspectRatioOptionDialog> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HMSTitleText(
-            text: "Change Aspect Ratio",
+            text: t.change_aspect_ratio,
             fontSize: 20,
             letterSpacing: 0.15,
             textColor: themeDefaultColor,
@@ -118,7 +119,7 @@ class AspectRatioOptionDialogState extends State<AspectRatioOptionDialog> {
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-                  child: Text('Cancel',
+                  child: Text(t.cancel,
                       style: HMSTextStyle.setTextStyle(
                           color: themeDefaultColor,
                           fontSize: 16,
@@ -139,7 +140,7 @@ class AspectRatioOptionDialogState extends State<AspectRatioOptionDialog> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
                 child: Text(
-                  'Change',
+                  t.change,
                   style: HMSTextStyle.setTextStyle(
                       color: themeDefaultColor,
                       fontSize: 16,

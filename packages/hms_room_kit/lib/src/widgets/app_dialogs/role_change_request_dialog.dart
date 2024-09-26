@@ -1,5 +1,6 @@
 // Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_text_style.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:hms_room_kit/src/common/app_color.dart';
@@ -22,7 +23,7 @@ class RoleChangeRequestDialogState extends State<RoleChangeRequestDialog> {
   @override
   Widget build(BuildContext context) {
     String message =
-        "‘${widget.roleChangeRequest.suggestedBy?.name ?? "Anonymus"}’ requested to change your role to ‘${widget.roleChangeRequest.suggestedRole.name}’";
+        "‘${widget.roleChangeRequest.suggestedBy?.name ?? "Anonymus"}’ ${t.requested_to_change_your_role} ‘${widget.roleChangeRequest.suggestedRole.name}’";
     return AlertDialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       insetPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -57,7 +58,7 @@ class RoleChangeRequestDialogState extends State<RoleChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child:
-                    HMSTitleText(text: 'Reject', textColor: themeDefaultColor),
+                    HMSTitleText(text: t.reject, textColor: themeDefaultColor),
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -76,7 +77,7 @@ class RoleChangeRequestDialogState extends State<RoleChangeRequestDialog> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 12),
                 child: HMSTitleText(
-                  text: 'Accept',
+                  text: t.accept,
                   textColor: themeDefaultColor,
                 ),
               ),

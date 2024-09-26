@@ -25,6 +25,7 @@ class HMSTitleText extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextOverflow? textOverflow;
   final int? maxLines;
+  final TextAlign? textAlign;
 
   const HMSTitleText(
       {Key? key,
@@ -33,6 +34,7 @@ class HMSTitleText extends StatelessWidget {
       this.letterSpacing = 0.5,
       this.lineHeight = 24,
       this.fontSize = 16,
+      this.textAlign,
       this.fontWeight = FontWeight.w600,
       this.textOverflow = TextOverflow.ellipsis,
       this.maxLines})
@@ -43,6 +45,7 @@ class HMSTitleText extends StatelessWidget {
     return Text(text,
         overflow: textOverflow,
         maxLines: maxLines,
+        textAlign: textAlign,
         style: HMSTextStyle.setTextStyle(
             color: textColor,
             height: lineHeight! / fontSize!,

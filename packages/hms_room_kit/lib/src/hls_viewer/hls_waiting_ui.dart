@@ -3,6 +3,7 @@ library;
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
@@ -35,7 +36,7 @@ class HLSWaitingUI extends StatelessWidget {
             height: 24,
           ),
           HMSTitleText(
-            text: "Stream yet to start",
+            text: t.stream_yet_to_start,
             textColor: HMSThemeColors.onSurfaceHighEmphasis,
             fontSize: 24,
             lineHeight: 32,
@@ -45,7 +46,7 @@ class HLSWaitingUI extends StatelessWidget {
             height: 8,
           ),
           HMSSubheadingText(
-              text: "Sit back and relax",
+              text: t.sit_back_and_relax,
               fontSize: 16,
               lineHeight: 24,
               letterSpacing: 0.5,

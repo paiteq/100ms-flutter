@@ -2,6 +2,7 @@
 library;
 
 import 'package:flutter/cupertino.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 
 ///Project imports
 import 'package:hms_room_kit/src/layout_api/hms_theme_colors.dart';
@@ -21,7 +22,9 @@ class PreviewParticipantsText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HMSTitleText(
-        text: "$peerCount ${peerCount > 1 ? "others" : "other"} in session",
+        text: peerCount > 1
+            ? t.others_in_session(count: peerCount)
+            : t.other_in_session(count: peerCount),
         lineHeight: 20,
         fontSize: 14,
         letterSpacing: 0.25,

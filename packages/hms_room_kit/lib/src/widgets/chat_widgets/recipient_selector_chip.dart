@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -77,7 +78,7 @@ class _ReceipientSelectorChipState extends State<ReceipientSelectorChip> {
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: HMSTitleText(
-                text: "TO",
+                text: t.to,
                 textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
