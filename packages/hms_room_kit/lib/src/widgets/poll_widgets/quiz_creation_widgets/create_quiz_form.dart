@@ -186,7 +186,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
           children: [
             HMSTitleText(
                 text:
-                    "QUESTION ${widget.questionNumber + 1} OF ${widget.totalQuestions}",
+                    "${t.question_cap} ${widget.questionNumber + 1} ${t.of_cap} ${widget.totalQuestions}",
                 textColor: HMSThemeColors.onSurfaceLowEmphasis,
                 fontSize: 10,
                 letterSpacing: 1.5,
@@ -394,7 +394,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
                                       horizontal: 16, vertical: 12),
                                   fillColor: HMSThemeColors.surfaceBright,
                                   filled: true,
-                                  hintText: "Option ${index + 1}",
+                                  hintText: "${t.option} ${index + 1}",
                                   hintStyle: HMSTextStyle.setTextStyle(
                                       color:
                                           HMSThemeColors.onSurfaceLowEmphasis,

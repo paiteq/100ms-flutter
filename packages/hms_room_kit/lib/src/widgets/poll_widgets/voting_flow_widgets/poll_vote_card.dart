@@ -85,7 +85,7 @@ class _PollVoteCardState extends State<PollVoteCard> {
                 children: [
                   HMSTitleText(
                       text:
-                          "QUESTION ${widget.questionNumber + 1} OF ${widget.totalQuestions}: ",
+                          "${t.question_cap} ${widget.questionNumber + 1} ${t.off} ${widget.totalQuestions}: ",
                       textColor: HMSThemeColors.onSurfaceLowEmphasis,
                       fontSize: 10,
                       letterSpacing: 1.5,

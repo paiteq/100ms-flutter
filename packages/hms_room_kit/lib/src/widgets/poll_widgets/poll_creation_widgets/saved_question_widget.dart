@@ -40,7 +40,8 @@ class SavedQuestionWidget extends StatelessWidget {
             Row(
               children: [
                 HMSTitleText(
-                    text: "QUESTION ${questionNumber + 1} OF $totalQuestions: ",
+                    text:
+                        "${t.question_cap} ${questionNumber + 1} ${t.of_cap} $totalQuestions: ",
                     textColor: HMSThemeColors.onSurfaceLowEmphasis,
                     fontSize: 10,
                     letterSpacing: 1.5,

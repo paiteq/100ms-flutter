@@ -130,7 +130,7 @@ class PollResultCard extends StatelessWidget {
                 children: [
                   HMSTitleText(
                       text:
-                          "QUESTION ${questionNumber + 1} OF $totalQuestions: ",
+                          "${t.question_cap} ${questionNumber + 1} ${t.of_cap} $totalQuestions: ",
                       textColor: HMSThemeColors.onSurfaceLowEmphasis,
                       fontSize: 10,
                       letterSpacing: 1.5,

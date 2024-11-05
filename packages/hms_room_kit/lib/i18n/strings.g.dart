@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 329 (164 per locale)
+/// Strings: 335 (167 per locale)
 ///
-/// Built on 2024-09-26 at 09:47 UTC
+/// Built on 2024-11-05 at 04:53 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -312,6 +312,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get there_are_no_messages_here_yet => 'There are no messages here yet.\nStart a conversation by sending a message.';
 	String get to => 'To';
 	String get you => 'You';
+	String get option => 'Option';
+	String get question_cap => 'QUESTION';
+	String get of_cap => 'OF';
 }
 
 // Path: <root>
@@ -503,6 +506,9 @@ class _StringsNl implements Translations {
 	@override String get there_are_no_messages_here_yet => 'Er zijn hier nog geen berichten.\nBegin een gesprek door een bericht te sturen.';
 	@override String get to => 'Naar';
 	@override String get you => 'Jij';
+	@override String get option => 'Optie';
+	@override String get question_cap => 'VRAAG';
+	@override String get of_cap => 'VAN';
 }
 
 /// Flat map(s) containing all translations.
@@ -675,6 +681,9 @@ extension on Translations {
 			case 'there_are_no_messages_here_yet': return 'There are no messages here yet.\nStart a conversation by sending a message.';
 			case 'to': return 'To';
 			case 'you': return 'You';
+			case 'option': return 'Option';
+			case 'question_cap': return 'QUESTION';
+			case 'of_cap': return 'OF';
 			default: return null;
 		}
 	}
@@ -848,6 +857,9 @@ extension on _StringsNl {
 			case 'there_are_no_messages_here_yet': return 'Er zijn hier nog geen berichten.\nBegin een gesprek door een bericht te sturen.';
 			case 'to': return 'Naar';
 			case 'you': return 'Jij';
+			case 'option': return 'Optie';
+			case 'question_cap': return 'VRAAG';
+			case 'of_cap': return 'VAN';
 			default: return null;
 		}
 	}

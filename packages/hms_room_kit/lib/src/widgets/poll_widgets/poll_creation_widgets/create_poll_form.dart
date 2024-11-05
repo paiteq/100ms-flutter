@@ -4,6 +4,7 @@ library;
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 
 ///Project imports
@@ -128,7 +129,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
           children: [
             HMSTitleText(
                 text:
-                    "QUESTION ${widget.questionNumber + 1} OF ${widget.totalQuestions}",
+                    "${t.question_cap} ${widget.questionNumber + 1} ${t.of_cap} ${widget.totalQuestions}",
                 textColor: HMSThemeColors.onSurfaceLowEmphasis,
                 fontSize: 10,
                 letterSpacing: 1.5,
