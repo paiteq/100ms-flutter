@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 ///Project imports
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/meeting/meeting_store.dart';
 import 'package:hms_room_kit/src/model/peer_track_node.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_cross_button.dart';
@@ -184,7 +185,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? "Unmute" : "Mute"} Audio",
+                                "${t.audio}${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.unmute : t.mute}",
                             textColor: widget.peerTrackNode.audioTrack == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
@@ -216,7 +217,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${(widget.peerTrackNode.track?.isMute ?? true) ? "Unmute" : "Mute"} Video",
+                                "${t.video} ${(widget.peerTrackNode.track?.isMute ?? true) ? t.unmute : t.mute}",
                             textColor: widget.peerTrackNode.track == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
@@ -259,7 +260,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                               BlendMode.srcIn),
                         ),
                         title: HMSSubheadingText(
-                            text: "Remove Participant",
+                            text: t.remove_participant,
                             textColor: HMSThemeColors.alertErrorDefault)),
                 ],
               ),

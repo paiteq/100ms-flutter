@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hms_room_kit/hms_room_kit.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hms_room_kit/src/meeting/meeting_store.dart';
 import 'package:hms_room_kit/src/widgets/bottom_sheets/participants_bottom_sheet.dart';
 import 'package:hms_room_kit/src/widgets/common_widgets/hms_cross_button.dart';
@@ -44,7 +45,7 @@ class _OverlayParticipantsBottomSheetState
                     selector: (_, meetingStore) => meetingStore.peersInRoom,
                     builder: (_, peersInRoom, __) {
                       return HMSSubheadingText(
-                        text: "Participants ($peersInRoom)",
+                        text: "${t.participants} ($peersInRoom)",
                         textColor: HMSThemeColors.onSurfaceHighEmphasis,
                         fontWeight: FontWeight.w600,
                       );
