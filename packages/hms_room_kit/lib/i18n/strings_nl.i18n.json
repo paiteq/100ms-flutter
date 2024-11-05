@@ -166,5 +166,6 @@
     "you":"Jij",
     "option" : "Optie",
     "question_cap" : "VRAAG",
-    "of_cap":"VAN"
+    "of_cap":"VAN",
+    "who_will_win_the_match":"Bijvoorbeeld: Wie wint de wedstrijd?"
 }

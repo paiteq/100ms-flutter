@@ -138,7 +138,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
               height: 8,
             ),
             HMSSubheadingText(
-              text: "Question Type",
+              text: t.question_type,
               textColor: HMSThemeColors.onSurfaceHighEmphasis,
             ),
             const SizedBox(
@@ -181,7 +181,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
               height: 8,
             ),
             HMSSubheadingText(
-              text: "Question",
+              text: t.question,
               textColor: HMSThemeColors.onSurfaceHighEmphasis,
             ),
             const SizedBox(
@@ -210,7 +210,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
                         horizontal: 16, vertical: 12),
                     fillColor: HMSThemeColors.surfaceBright,
                     filled: true,
-                    hintText: "e.g. Who will win the match?",
+                    hintText: t.who_will_win_the_match,
                     hintStyle: HMSTextStyle.setTextStyle(
                         color: HMSThemeColors.onSurfaceLowEmphasis,
                         height: 1.5,
@@ -242,7 +242,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
             ),
 
             HMSSubheadingText(
-              text: "Options",
+              text: t.options,
               textColor: HMSThemeColors.onSurfaceHighEmphasis,
             ),
 
@@ -282,7 +282,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
                                     horizontal: 16, vertical: 12),
                                 fillColor: HMSThemeColors.surfaceBright,
                                 filled: true,
-                                hintText: "Option ${index + 1}",
+                                hintText: "${t.option} ${index + 1}",
                                 hintStyle: HMSTextStyle.setTextStyle(
                                     color: HMSThemeColors.onSurfaceLowEmphasis,
                                     height: 1.5,
@@ -335,7 +335,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
                         width: 16,
                       ),
                       HMSSubheadingText(
-                        text: "Add an option",
+                        text: t.add_an_option,
                         textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                       ),
                     ],
@@ -438,7 +438,7 @@ class _CreatePollFormState extends State<CreatePollForm> {
                       saveQuestion();
                     },
                     child: HMSTitleText(
-                        text: "Save",
+                        text: t.save,
                         textColor: _isPollValid()
                             ? HMSThemeColors.onSecondaryHighEmphasis
                             : HMSThemeColors.onSecondaryLowEmphasis))

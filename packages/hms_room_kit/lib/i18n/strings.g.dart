@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 335 (167 per locale)
+/// Strings: 337 (168 per locale)
 ///
-/// Built on 2024-11-05 at 04:53 UTC
+/// Built on 2024-11-05 at 05:46 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -315,6 +315,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get option => 'Option';
 	String get question_cap => 'QUESTION';
 	String get of_cap => 'OF';
+	String get who_will_win_the_match => 'e.g. Who will win the match?';
 }
 
 // Path: <root>
@@ -509,6 +510,7 @@ class _StringsNl implements Translations {
 	@override String get option => 'Optie';
 	@override String get question_cap => 'VRAAG';
 	@override String get of_cap => 'VAN';
+	@override String get who_will_win_the_match => 'Bijvoorbeeld: Wie wint de wedstrijd?';
 }
 
 /// Flat map(s) containing all translations.
@@ -684,6 +686,7 @@ extension on Translations {
 			case 'option': return 'Option';
 			case 'question_cap': return 'QUESTION';
 			case 'of_cap': return 'OF';
+			case 'who_will_win_the_match': return 'e.g. Who will win the match?';
 			default: return null;
 		}
 	}
@@ -860,6 +863,7 @@ extension on _StringsNl {
 			case 'option': return 'Optie';
 			case 'question_cap': return 'VRAAG';
 			case 'of_cap': return 'VAN';
+			case 'who_will_win_the_match': return 'Bijvoorbeeld: Wie wint de wedstrijd?';
 			default: return null;
 		}
 	}
