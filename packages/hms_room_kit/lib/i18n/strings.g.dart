@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 339 (169 per locale)
 ///
-/// Built on 2024-11-05 at 06:21 UTC
+/// Built on 2024-11-05 at 08:10 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -480,7 +480,7 @@ class _StringsNl implements Translations {
 	@override String get view_all => 'Bekijk alles';
 	@override String get unmute => 'Dempen opheffen';
 	@override String get video => 'Video';
-	@override String get audio => 'geluid';
+	@override String get audio => 'Geluid';
 	@override String get remove_from_stage => 'Verwijderen uit het podium';
 	@override String get bring_on_stage => 'Op het podium zetten';
 	@override String get on => 'aan';
@@ -835,7 +835,7 @@ extension on _StringsNl {
 			case 'view_all': return 'Bekijk alles';
 			case 'unmute': return 'Dempen opheffen';
 			case 'video': return 'Video';
-			case 'audio': return 'geluid';
+			case 'audio': return 'Geluid';
 			case 'remove_from_stage': return 'Verwijderen uit het podium';
 			case 'bring_on_stage': return 'Op het podium zetten';
 			case 'on': return 'aan';

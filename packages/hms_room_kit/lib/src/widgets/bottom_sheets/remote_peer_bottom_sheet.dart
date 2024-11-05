@@ -185,7 +185,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${t.audio}${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.unmute : t.mute}",
+                                "${t.audio} ${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.unmute : t.mute}",
                             textColor: widget.peerTrackNode.audioTrack == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
