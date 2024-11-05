@@ -167,5 +167,6 @@
     "option" : "Optie",
     "question_cap" : "VRAAG",
     "of_cap":"VAN",
-    "who_will_win_the_match":"Bijvoorbeeld: Wie wint de wedstrijd?"
+    "who_will_win_the_match":"Bijvoorbeeld: Wie wint de wedstrijd?",
+    "add_another_question":"Voeg nog een vraag toe"
 }

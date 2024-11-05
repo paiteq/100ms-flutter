@@ -166,5 +166,6 @@
     "option" : "Option",
     "question_cap" : "QUESTION",
     "of_cap":"OF",
-    "who_will_win_the_match":"e.g. Who will win the match?"
+    "who_will_win_the_match":"e.g. Who will win the match?",
+    "add_another_question":"Add another question"
 }

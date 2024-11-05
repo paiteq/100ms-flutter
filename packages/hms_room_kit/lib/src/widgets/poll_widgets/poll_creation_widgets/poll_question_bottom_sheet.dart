@@ -3,6 +3,7 @@ library;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:hmssdk_flutter/hmssdk_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -339,7 +340,7 @@ class _PollQuestionBottomSheetState extends State<PollQuestionBottomSheet> {
                               width: 16,
                             ),
                             HMSSubheadingText(
-                              text: "Add another question",
+                              text: t.add_another_question,
                               textColor: HMSThemeColors.onSurfaceMediumEmphasis,
                             ),
                           ],
