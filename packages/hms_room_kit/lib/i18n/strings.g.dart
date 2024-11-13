@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 345 (172 per locale)
+/// Strings: 349 (174 per locale)
 ///
-/// Built on 2024-11-13 at 06:08 UTC
+/// Built on 2024-11-13 at 06:35 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -320,6 +320,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get launch_poll => 'Launch Poll';
 	String get launch_quiz => 'Launch Quiz';
 	String get ask_a_question => 'e.g. Solve for 2x + 1/2 = 21 ';
+	String get host => 'Host';
+	String get guest => 'Guest';
 }
 
 // Path: <root>
@@ -425,7 +427,7 @@ class _StringsNl implements Translations {
 	@override String get question => 'Vraag';
 	@override String get select_radio_button => 'Selecteer een van de keuzerondjes om het juiste antwoord te markeren';
 	@override String get add_an_option => 'Voeg een optie toe';
-	@override String get point_weightage => 'Puntgewicht';
+	@override String get point_weightage => 'Aantal punten';
 	@override String get save => 'Opslaan';
 	@override String get edit => 'bewerking';
 	@override String get poll => 'Peiling';
@@ -519,6 +521,8 @@ class _StringsNl implements Translations {
 	@override String get launch_poll => 'Peiling starten';
 	@override String get launch_quiz => 'Quiz starten';
 	@override String get ask_a_question => 'Stel een vraag';
+	@override String get host => 'Host';
+	@override String get guest => 'Gast';
 }
 
 /// Flat map(s) containing all translations.
@@ -699,6 +703,8 @@ extension on Translations {
 			case 'launch_poll': return 'Launch Poll';
 			case 'launch_quiz': return 'Launch Quiz';
 			case 'ask_a_question': return 'e.g. Solve for 2x + 1/2 = 21 ';
+			case 'host': return 'Host';
+			case 'guest': return 'Guest';
 			default: return null;
 		}
 	}
@@ -786,7 +792,7 @@ extension on _StringsNl {
 			case 'question': return 'Vraag';
 			case 'select_radio_button': return 'Selecteer een van de keuzerondjes om het juiste antwoord te markeren';
 			case 'add_an_option': return 'Voeg een optie toe';
-			case 'point_weightage': return 'Puntgewicht';
+			case 'point_weightage': return 'Aantal punten';
 			case 'save': return 'Opslaan';
 			case 'edit': return 'bewerking';
 			case 'poll': return 'Peiling';
@@ -880,6 +886,8 @@ extension on _StringsNl {
 			case 'launch_poll': return 'Peiling starten';
 			case 'launch_quiz': return 'Quiz starten';
 			case 'ask_a_question': return 'Stel een vraag';
+			case 'host': return 'Host';
+			case 'guest': return 'Gast';
 			default: return null;
 		}
 	}

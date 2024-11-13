@@ -170,5 +170,7 @@
     "add_another_question":"Add another question",
     "launch_poll":"Launch Poll",
     "launch_quiz":"Launch Quiz",
-    "ask_a_question":"e.g. Solve for 2x + 1/2 = 21 "
+    "ask_a_question":"e.g. Solve for 2x + 1/2 = 21 ",
+    "host":"Host",
+    "guest":"Guest"
 }

@@ -171,5 +171,7 @@
     "add_another_question":"Voeg nog een vraag toe",
     "launch_poll":"Peiling starten",
     "launch_quiz":"Quiz starten",
-    "ask_a_question":"Stel een vraag"
+    "ask_a_question":"Stel een vraag",
+    "host":"Host",
+    "guest":"Gast"
 }
