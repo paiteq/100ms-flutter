@@ -48,7 +48,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
       return t.host;
     } else if (roleName == "guest" || roleName == "Guest") {
       return t.guest;
-    } else if (roleName == "participants" || roleName == "Participants") {
+    } else if (roleName == "participant" || roleName == "Participant") {
       return t.participants;
     }
     return roleName;
