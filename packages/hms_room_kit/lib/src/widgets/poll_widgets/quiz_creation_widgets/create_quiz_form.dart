@@ -268,7 +268,7 @@ class _CreatePollFormState extends State<CreateQuizForm> {
                         horizontal: 16, vertical: 12),
                     fillColor: HMSThemeColors.surfaceBright,
                     filled: true,
-                    hintText: "e.g. Solve for 2x + ½ = 21",
+                    hintText: t.ask_a_question,
                     hintStyle: HMSTextStyle.setTextStyle(
                         color: HMSThemeColors.onSurfaceLowEmphasis,
                         height: 1.5,

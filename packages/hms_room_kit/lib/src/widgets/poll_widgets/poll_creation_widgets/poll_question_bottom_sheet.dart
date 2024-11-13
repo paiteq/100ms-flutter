@@ -388,7 +388,7 @@ class _PollQuestionBottomSheetState extends State<PollQuestionBottomSheet> {
                           },
                           child: Center(
                               child: HMSTitleText(
-                            text: "Launch ${widget.isPoll ? "Poll" : "Quiz"}",
+                            text: widget.isPoll ? t.launch_poll : t.launch_quiz,
                             textColor: _isQuestionValid
                                 ? HMSThemeColors.onPrimaryHighEmphasis
                                 : HMSThemeColors.onPrimaryLowEmphasis,

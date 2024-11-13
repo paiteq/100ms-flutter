@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 339 (169 per locale)
+/// Strings: 345 (172 per locale)
 ///
-/// Built on 2024-11-05 at 08:10 UTC
+/// Built on 2024-11-13 at 06:08 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -317,6 +317,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get of_cap => 'OF';
 	String get who_will_win_the_match => 'e.g. Who will win the match?';
 	String get add_another_question => 'Add another question';
+	String get launch_poll => 'Launch Poll';
+	String get launch_quiz => 'Launch Quiz';
+	String get ask_a_question => 'e.g. Solve for 2x + 1/2 = 21 ';
 }
 
 // Path: <root>
@@ -346,7 +349,7 @@ class _StringsNl implements Translations {
 	@override String get join_now => 'Deelnemen';
 	@override String get let_get_started => 'Aan de slag!';
 	@override String get dont_leave => 'Ga niet weg';
-	@override String get leave => 'Vertrekken';
+	@override String get leave => 'Sessie verlaten';
 	@override String get ok => 'OK';
 	@override String get cancel => 'annuleren';
 	@override String get recording => 'opname';
@@ -360,7 +363,7 @@ class _StringsNl implements Translations {
 	@override String get please_select_a_role => 'Selecteer een rol';
 	@override String get change_role => 'rol veranderen';
 	@override String get end_room => 'Eindkamer';
-	@override String get others_can_contine_after_you_leave => 'Anderen zullen doorgaan nadat je vertrekt. Je kunt de sessie opnieuw betreden.';
+	@override String get others_can_contine_after_you_leave => 'Anderen zullen doorgaan nadat je de sessie hebt verlaten. Je kunt opnieuw deelnemen aan de sessie.';
 	@override String get about_session => 'Over sessie';
 	@override String get live => 'Live';
 	@override String get go_live => 'ga live';
@@ -389,7 +392,7 @@ class _StringsNl implements Translations {
 	@override String get options => 'Opties';
 	@override String get participants => 'Deelnemers';
 	@override String get sharing_screen => 'Scherm delen';
-	@override String get share_screen => 'Deel scherm';
+	@override String get share_screen => 'Scherm delen';
 	@override String get iam_back => 'Ik ben terug';
 	@override String get be_right_back => 'Ben zo terug';
 	@override String get lower_hand => 'Onder hand';
@@ -423,7 +426,7 @@ class _StringsNl implements Translations {
 	@override String get select_radio_button => 'Selecteer een van de keuzerondjes om het juiste antwoord te markeren';
 	@override String get add_an_option => 'Voeg een optie toe';
 	@override String get point_weightage => 'Puntgewicht';
-	@override String get save => 'redden';
+	@override String get save => 'Opslaan';
 	@override String get edit => 'bewerking';
 	@override String get poll => 'Peiling';
 	@override String get quiz => 'Quiz';
@@ -442,7 +445,7 @@ class _StringsNl implements Translations {
 	@override String get audio_output => 'Audio-uitvoer';
 	@override String get auto => 'Automatisch';
 	@override String get mute_sound => 'Geluid dempen';
-	@override String get mute_audio => 'Microfoon uit';
+	@override String get mute_audio => 'Geluid dempen';
 	@override String get enter_name => 'Naam invoeren...';
 	@override String get change_name => 'Naam wijzigen';
 	@override String get your_name_will_be_visible => 'Uw naam zal zichtbaar zijn voor andere deelnemers aan\n de sessie.';
@@ -462,9 +465,9 @@ class _StringsNl implements Translations {
 	@override String get session => 'Sessie';
 	@override String get stream => 'stroom';
 	@override String get end_stream => 'Einde stroom';
-	@override String get end_session => 'Einde sessie';
+	@override String get end_session => 'Sessie beëindigen';
 	@override String get this_stream_will_end => 'De stream stopt voor iedereen nadat ze deze hebben bekeken.';
-	@override String get this_session_will_end => 'De sessie eindigt onmiddellijk voor iedereen in de kamer.';
+	@override String get this_session_will_end => 'De sessie wordt onmiddellijk voor iedereen beëindigd.';
 	@override String get minimize_tile => 'Mij verbergen';
 	@override String get stop_screen_share => 'Scherm delen stoppen';
 	@override String get audio_settings => 'Audio-instellingen';
@@ -511,8 +514,11 @@ class _StringsNl implements Translations {
 	@override String get option => 'Optie';
 	@override String get question_cap => 'VRAAG';
 	@override String get of_cap => 'VAN';
-	@override String get who_will_win_the_match => 'Bijvoorbeeld: Wie wint de wedstrijd?';
+	@override String get who_will_win_the_match => 'Bijvoorbeeld: wat is de juiste optie?';
 	@override String get add_another_question => 'Voeg nog een vraag toe';
+	@override String get launch_poll => 'Peiling starten';
+	@override String get launch_quiz => 'Quiz starten';
+	@override String get ask_a_question => 'Stel een vraag';
 }
 
 /// Flat map(s) containing all translations.
@@ -690,6 +696,9 @@ extension on Translations {
 			case 'of_cap': return 'OF';
 			case 'who_will_win_the_match': return 'e.g. Who will win the match?';
 			case 'add_another_question': return 'Add another question';
+			case 'launch_poll': return 'Launch Poll';
+			case 'launch_quiz': return 'Launch Quiz';
+			case 'ask_a_question': return 'e.g. Solve for 2x + 1/2 = 21 ';
 			default: return null;
 		}
 	}
@@ -701,7 +710,7 @@ extension on _StringsNl {
 			case 'join_now': return 'Deelnemen';
 			case 'let_get_started': return 'Aan de slag!';
 			case 'dont_leave': return 'Ga niet weg';
-			case 'leave': return 'Vertrekken';
+			case 'leave': return 'Sessie verlaten';
 			case 'ok': return 'OK';
 			case 'cancel': return 'annuleren';
 			case 'recording': return 'opname';
@@ -715,7 +724,7 @@ extension on _StringsNl {
 			case 'please_select_a_role': return 'Selecteer een rol';
 			case 'change_role': return 'rol veranderen';
 			case 'end_room': return 'Eindkamer';
-			case 'others_can_contine_after_you_leave': return 'Anderen zullen doorgaan nadat je vertrekt. Je kunt de sessie opnieuw betreden.';
+			case 'others_can_contine_after_you_leave': return 'Anderen zullen doorgaan nadat je de sessie hebt verlaten. Je kunt opnieuw deelnemen aan de sessie.';
 			case 'about_session': return 'Over sessie';
 			case 'live': return 'Live';
 			case 'go_live': return 'ga live';
@@ -744,7 +753,7 @@ extension on _StringsNl {
 			case 'options': return 'Opties';
 			case 'participants': return 'Deelnemers';
 			case 'sharing_screen': return 'Scherm delen';
-			case 'share_screen': return 'Deel scherm';
+			case 'share_screen': return 'Scherm delen';
 			case 'iam_back': return 'Ik ben terug';
 			case 'be_right_back': return 'Ben zo terug';
 			case 'lower_hand': return 'Onder hand';
@@ -778,7 +787,7 @@ extension on _StringsNl {
 			case 'select_radio_button': return 'Selecteer een van de keuzerondjes om het juiste antwoord te markeren';
 			case 'add_an_option': return 'Voeg een optie toe';
 			case 'point_weightage': return 'Puntgewicht';
-			case 'save': return 'redden';
+			case 'save': return 'Opslaan';
 			case 'edit': return 'bewerking';
 			case 'poll': return 'Peiling';
 			case 'quiz': return 'Quiz';
@@ -797,7 +806,7 @@ extension on _StringsNl {
 			case 'audio_output': return 'Audio-uitvoer';
 			case 'auto': return 'Automatisch';
 			case 'mute_sound': return 'Geluid dempen';
-			case 'mute_audio': return 'Microfoon uit';
+			case 'mute_audio': return 'Geluid dempen';
 			case 'enter_name': return 'Naam invoeren...';
 			case 'change_name': return 'Naam wijzigen';
 			case 'your_name_will_be_visible': return 'Uw naam zal zichtbaar zijn voor andere deelnemers aan\n de sessie.';
@@ -817,9 +826,9 @@ extension on _StringsNl {
 			case 'session': return 'Sessie';
 			case 'stream': return 'stroom';
 			case 'end_stream': return 'Einde stroom';
-			case 'end_session': return 'Einde sessie';
+			case 'end_session': return 'Sessie beëindigen';
 			case 'this_stream_will_end': return 'De stream stopt voor iedereen nadat ze deze hebben bekeken.';
-			case 'this_session_will_end': return 'De sessie eindigt onmiddellijk voor iedereen in de kamer.';
+			case 'this_session_will_end': return 'De sessie wordt onmiddellijk voor iedereen beëindigd.';
 			case 'minimize_tile': return 'Mij verbergen';
 			case 'stop_screen_share': return 'Scherm delen stoppen';
 			case 'audio_settings': return 'Audio-instellingen';
@@ -866,8 +875,11 @@ extension on _StringsNl {
 			case 'option': return 'Optie';
 			case 'question_cap': return 'VRAAG';
 			case 'of_cap': return 'VAN';
-			case 'who_will_win_the_match': return 'Bijvoorbeeld: Wie wint de wedstrijd?';
+			case 'who_will_win_the_match': return 'Bijvoorbeeld: wat is de juiste optie?';
 			case 'add_another_question': return 'Voeg nog een vraag toe';
+			case 'launch_poll': return 'Peiling starten';
+			case 'launch_quiz': return 'Quiz starten';
+			case 'ask_a_question': return 'Stel een vraag';
 			default: return null;
 		}
 	}
