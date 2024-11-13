@@ -40,6 +40,20 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
     super.deactivate();
   }
 
+  String roleName() {
+    final String roleName = widget.peerTrackNode.peer.role.name;
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participants" || roleName == "Participants") {
+      return t.participants;
+    }
+    return '';
+  }
+
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
@@ -71,7 +85,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                           height: 5,
                         ),
                         HMSSubtitleText(
-                            text: widget.peerTrackNode.peer.role.name,
+                            text: roleName(),
                             textColor: HMSThemeColors.onSurfaceMediumEmphasis)
                       ],
                     ),
