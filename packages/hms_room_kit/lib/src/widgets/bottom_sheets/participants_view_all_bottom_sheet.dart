@@ -52,6 +52,17 @@ class _ParticipantsViewAllBottomSheetState
     });
   }
 
+  String roleName() {
+    if (widget.role == "everyone" || widget.role == "Everyone") {
+      return t.everyone;
+    } else if (widget.role == "host" || widget.role == "Host") {
+      return t.host;
+    } else if (widget.role == "guest" || widget.role == "Guest") {
+      return t.guest;
+    }
+    return widget.role;
+  }
+
   @override
   void deactivate() {
     context.read<MeetingStore>().removeBottomSheet(context);
@@ -392,7 +403,7 @@ class _ParticipantsViewAllBottomSheetState
                                             horizontal: 16.0, vertical: 12),
                                         child: HMSSubheadingText(
                                           fontWeight: FontWeight.w600,
-                                          text: widget.role,
+                                          text: roleName(),
                                           textColor: HMSThemeColors
                                               .onSurfaceMediumEmphasis,
                                           letterSpacing: 0.1,
