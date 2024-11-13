@@ -51,7 +51,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
     } else if (roleName == "participants" || roleName == "Participants") {
       return t.participants;
     }
-    return '';
+    return roleName;
   }
 
   @override
