@@ -185,7 +185,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${t.audio} ${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.unmute : t.mute}",
+                                "${t.microphone} ${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.on : t.off}",
                             textColor: widget.peerTrackNode.audioTrack == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
@@ -217,7 +217,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${t.video} ${(widget.peerTrackNode.track?.isMute ?? true) ? t.unmute : t.mute}",
+                                "${t.video} ${(widget.peerTrackNode.track?.isMute ?? true) ? t.on : t.off}",
                             textColor: widget.peerTrackNode.track == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
