@@ -329,15 +329,15 @@ class Chat {
     //     json.containsKey('roles_whitelist') && json['roles_whitelist'] is List
     //         ? List<String>.from(json['roles_whitelist'])
     //         : [];
-    for (int i = 0; i < rolesWhitelist.length; i++) {
-      if (rolesWhitelist[i] == "everyone" || rolesWhitelist[i] == "Everyone") {
-        rolesWhitelist[i] = t.everyone;
-      } else if (rolesWhitelist[i] == "host" || rolesWhitelist[i] == "Host") {
-        rolesWhitelist[i] = t.host;
-      } else if (rolesWhitelist[i] == "guest" || rolesWhitelist[i] == "Guest") {
-        rolesWhitelist[i] = t.guest;
-      }
-    }
+    // for (int i = 0; i < rolesWhitelist.length; i++) {
+    //   if (rolesWhitelist[i] == "everyone" || rolesWhitelist[i] == "Everyone") {
+    //     rolesWhitelist[i] = t.everyone;
+    //   } else if (rolesWhitelist[i] == "host" || rolesWhitelist[i] == "Host") {
+    //     rolesWhitelist[i] = t.host;
+    //   } else if (rolesWhitelist[i] == "guest" || rolesWhitelist[i] == "Guest") {
+    //     rolesWhitelist[i] = t.guest;
+    //   }
+    // }
     realTimeControls = json.containsKey('real_time_controls')
         ? RealTimeControls.fromJson(json['real_time_controls'])
         : null;
