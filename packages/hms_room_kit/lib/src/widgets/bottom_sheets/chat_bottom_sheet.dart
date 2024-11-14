@@ -65,25 +65,25 @@ class _ChatBottomSheetState extends State<ChatBottomSheet> {
   void setRecipientChipValue() {
     dynamic currentValue = context.read<MeetingStore>().recipientSelectorValue;
     if (currentValue is HMSPeer) {
-      currentlySelectedValue = setCurrentValueTranslation(currentValue.name);
+      currentlySelectedValue = currentValue.name;
       currentlySelectedpeerId = currentValue.peerId;
     } else if (currentValue is HMSRole) {
-      currentlySelectedValue = setCurrentValueTranslation(currentValue.name);
+      currentlySelectedValue = currentValue.name;
     } else if (currentValue is String) {
-      currentlySelectedValue = setCurrentValueTranslation(currentValue);
+      currentlySelectedValue = currentValue;
     }
   }
 
-  String setCurrentValueTranslation(String currentValue) {
-    if (currentValue == "everyone" || currentValue == "Everyone") {
-      return t.everyone;
-    } else if (currentValue == "host" || currentValue == "Host") {
-      return t.host;
-    } else if (currentValue == "guest" || currentValue == "Guest") {
-      return t.guest;
-    }
-    return currentValue;
-  }
+  // String setCurrentValueTranslation(String currentValue) {
+  //   if (currentValue == "everyone" || currentValue == "Everyone") {
+  //     return t.everyone;
+  //   } else if (currentValue == "host" || currentValue == "Host") {
+  //     return t.host;
+  //   } else if (currentValue == "guest" || currentValue == "Guest") {
+  //     return t.guest;
+  //   }
+  //   return currentValue;
+  // }
 
   void sendMessage(TextEditingController messageTextController) async {
     MeetingStore meetingStore = context.read<MeetingStore>();
