@@ -49,6 +49,19 @@ class _ReceipientSelectorChipState extends State<ReceipientSelectorChip> {
     widget.updateSelectedValue(newValue, peerId);
   }
 
+  String roleNameTranslation(roleName) {
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participant" || roleName == "Participant") {
+      return t.participants;
+    }
+    return roleName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -127,7 +140,8 @@ class _ReceipientSelectorChipState extends State<ReceipientSelectorChip> {
                               }
 
                               return HMSTitleText(
-                                  text: currentlySelectedValue,
+                                  text: roleNameTranslation(
+                                      currentlySelectedValue),
                                   textOverflow: TextOverflow.ellipsis,
                                   fontSize: 12,
                                   lineHeight: 16,
