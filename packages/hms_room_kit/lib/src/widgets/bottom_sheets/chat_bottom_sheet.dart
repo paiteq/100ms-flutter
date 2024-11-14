@@ -74,17 +74,6 @@ class _ChatBottomSheetState extends State<ChatBottomSheet> {
     }
   }
 
-  // String setCurrentValueTranslation(String currentValue) {
-  //   if (currentValue == "everyone" || currentValue == "Everyone") {
-  //     return t.everyone;
-  //   } else if (currentValue == "host" || currentValue == "Host") {
-  //     return t.host;
-  //   } else if (currentValue == "guest" || currentValue == "Guest") {
-  //     return t.guest;
-  //   }
-  //   return currentValue;
-  // }
-
   void sendMessage(TextEditingController messageTextController) async {
     MeetingStore meetingStore = context.read<MeetingStore>();
     List<HMSRole> hmsRoles = meetingStore.roles;

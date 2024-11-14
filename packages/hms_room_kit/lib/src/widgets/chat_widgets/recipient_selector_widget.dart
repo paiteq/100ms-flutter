@@ -36,6 +36,19 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
     currentlySelectedValue = widget.selectedValue;
   }
 
+  String roleNameTranslation(roleName) {
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participant" || roleName == "Participant") {
+      return t.participants;
+    }
+    return roleName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
@@ -92,12 +105,12 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                             child: ListTile(
                               onTap: () {
                                 setState(() {
-                                  currentlySelectedValue = t.everyone;
+                                  currentlySelectedValue = "Everyone";
                                 });
                                 widget.updateUI(currentlySelectedValue, null);
                                 context
                                     .read<MeetingStore>()
-                                    .recipientSelectorValue = t.everyone;
+                                    .recipientSelectorValue = "Everyone";
                                 Navigator.pop(context);
                               },
                               dense: true,
@@ -119,7 +132,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                 letterSpacing: 0.1,
                                 lineHeight: 20,
                               ),
-                              trailing: currentlySelectedValue == t.everyone
+                              trailing: currentlySelectedValue == "Everyone"
                                   ? SvgPicture.asset(
                                       "packages/hms_room_kit/lib/src/assets/icons/tick.svg",
                                       fit: BoxFit.scaleDown,
@@ -198,7 +211,7 @@ class _RecipientSelectorWidgetState extends State<RecipientSelectorWidget> {
                                           Navigator.pop(context);
                                         },
                                         title: HMSTitleText(
-                                          text: roleName,
+                                          text: roleNameTranslation(roleName),
                                           textColor: HMSThemeColors
                                               .onSurfaceHighEmphasis,
                                           fontSize: 14,
