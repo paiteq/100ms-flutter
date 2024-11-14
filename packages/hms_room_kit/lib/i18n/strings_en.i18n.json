@@ -172,5 +172,6 @@
     "launch_quiz":"Launch Quiz",
     "ask_a_question":"e.g. Solve for 2x + 1/2 = 21 ",
     "host":"Host",
-    "guest":"Guest"
+    "guest":"Guest",
+    "say_something":"Say something..."
 }

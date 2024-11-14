@@ -173,5 +173,6 @@
     "launch_quiz":"Quiz starten",
     "ask_a_question":"Stel een vraag",
     "host":"Host",
-    "guest":"Gast"
+    "guest":"Gast",
+    "say_something":"Zeg iets..."
 }

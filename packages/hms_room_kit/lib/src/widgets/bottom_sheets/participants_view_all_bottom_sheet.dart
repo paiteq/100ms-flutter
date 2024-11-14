@@ -319,19 +319,6 @@ class _ParticipantsViewAllBottomSheetState
     context.read<MeetingStore>().enableRefresh();
   }
 
-  String roleNameTranslation(roleName) {
-    if (roleName == "everyone" || roleName == "Everyone") {
-      return t.everyone;
-    } else if (roleName == "host" || roleName == "Host") {
-      return t.host;
-    } else if (roleName == "guest" || roleName == "Guest") {
-      return t.guest;
-    } else if (roleName == "participant" || roleName == "Participant") {
-      return t.participants;
-    }
-    return roleName;
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

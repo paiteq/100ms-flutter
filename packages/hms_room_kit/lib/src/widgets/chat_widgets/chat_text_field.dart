@@ -6,6 +6,7 @@ import 'dart:math' as math;
 ///Package imports
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
 
@@ -132,62 +133,61 @@ class _ChatTextFieldState extends State<ChatTextField> {
                                               letterSpacing: 0.25),
                                           controller: messageTextController,
                                           decoration: InputDecoration(
-                                              isDense: true,
-                                              suffixIcon: GestureDetector(
-                                                  onTap: () {
-                                                    if (messageTextController
-                                                        .text
-                                                        .trim()
-                                                        .isEmpty) {
-                                                      Utilities.showToast(
-                                                          "Message can't be empty");
-                                                    }
-                                                    widget.sendMessage(
-                                                        messageTextController);
-                                                    messageTextController
-                                                        .clear();
-                                                  },
-                                                  child: SvgPicture.asset(
-                                                    "packages/hms_room_kit/lib/src/assets/icons/send_message.svg",
-                                                    fit: BoxFit.scaleDown,
-                                                    colorFilter: ColorFilter.mode(
-                                                        messageTextController
-                                                                .text
-                                                                .trim()
-                                                                .isEmpty
-                                                            ? HMSThemeColors
-                                                                .onSurfaceLowEmphasis
-                                                            : HMSThemeColors
-                                                                .onSurfaceHighEmphasis,
-                                                        BlendMode.srcIn),
-                                                  )),
-                                              focusedBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                      width: 2,
-                                                      color: HMSThemeColors
-                                                          .primaryDefault),
-                                                  borderRadius:
-                                                      const BorderRadius.all(
-                                                          Radius.circular(8))),
-                                              enabledBorder: InputBorder.none,
-                                              errorBorder: InputBorder.none,
-                                              disabledBorder: InputBorder.none,
-                                              hintStyle: HMSTextStyle
-                                                  .setTextStyle(
-                                                      color: HMSThemeColors
-                                                          .onSurfaceLowEmphasis,
-                                                      fontSize: 14,
-                                                      height: 20 / 14,
-                                                      letterSpacing: 0.25,
-                                                      fontWeight:
-                                                          FontWeight.w400),
-                                              contentPadding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 8,
-                                                      horizontal: 12),
-                                              hintText: HMSRoomLayout.chatData
-                                                      ?.messagePlaceholder ??
-                                                  "Send a message..."),
+                                            isDense: true,
+                                            suffixIcon: GestureDetector(
+                                                onTap: () {
+                                                  if (messageTextController.text
+                                                      .trim()
+                                                      .isEmpty) {
+                                                    Utilities.showToast(
+                                                        "Message can't be empty");
+                                                  }
+                                                  widget.sendMessage(
+                                                      messageTextController);
+                                                  messageTextController.clear();
+                                                },
+                                                child: SvgPicture.asset(
+                                                  "packages/hms_room_kit/lib/src/assets/icons/send_message.svg",
+                                                  fit: BoxFit.scaleDown,
+                                                  colorFilter: ColorFilter.mode(
+                                                      messageTextController.text
+                                                              .trim()
+                                                              .isEmpty
+                                                          ? HMSThemeColors
+                                                              .onSurfaceLowEmphasis
+                                                          : HMSThemeColors
+                                                              .onSurfaceHighEmphasis,
+                                                      BlendMode.srcIn),
+                                                )),
+                                            focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    width: 2,
+                                                    color: HMSThemeColors
+                                                        .primaryDefault),
+                                                borderRadius:
+                                                    const BorderRadius.all(
+                                                        Radius.circular(8))),
+                                            enabledBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            disabledBorder: InputBorder.none,
+                                            hintStyle: HMSTextStyle
+                                                .setTextStyle(
+                                                    color: HMSThemeColors
+                                                        .onSurfaceLowEmphasis,
+                                                    fontSize: 14,
+                                                    height: 20 / 14,
+                                                    letterSpacing: 0.25,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                            contentPadding:
+                                                const EdgeInsets.symmetric(
+                                                    vertical: 8,
+                                                    horizontal: 12),
+                                            // hintText: HMSRoomLayout.chatData
+                                            //         ?.messagePlaceholder ??
+                                            //     "Send a message...",
+                                            hintText: t.say_something,
+                                          ),
                                         );
                                       }),
                                 ),

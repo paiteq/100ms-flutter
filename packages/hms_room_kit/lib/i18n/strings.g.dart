@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 349 (174 per locale)
+/// Strings: 351 (175 per locale)
 ///
-/// Built on 2024-11-13 at 06:35 UTC
+/// Built on 2024-11-14 at 07:48 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -322,6 +322,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get ask_a_question => 'e.g. Solve for 2x + 1/2 = 21 ';
 	String get host => 'Host';
 	String get guest => 'Guest';
+	String get say_something => 'Say something...';
 }
 
 // Path: <root>
@@ -523,6 +524,7 @@ class _StringsNl implements Translations {
 	@override String get ask_a_question => 'Stel een vraag';
 	@override String get host => 'Host';
 	@override String get guest => 'Gast';
+	@override String get say_something => 'Zeg iets...';
 }
 
 /// Flat map(s) containing all translations.
@@ -705,6 +707,7 @@ extension on Translations {
 			case 'ask_a_question': return 'e.g. Solve for 2x + 1/2 = 21 ';
 			case 'host': return 'Host';
 			case 'guest': return 'Guest';
+			case 'say_something': return 'Say something...';
 			default: return null;
 		}
 	}
@@ -888,6 +891,7 @@ extension on _StringsNl {
 			case 'ask_a_question': return 'Stel een vraag';
 			case 'host': return 'Host';
 			case 'guest': return 'Gast';
+			case 'say_something': return 'Zeg iets...';
 			default: return null;
 		}
 	}
