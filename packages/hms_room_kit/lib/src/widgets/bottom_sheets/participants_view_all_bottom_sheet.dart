@@ -319,6 +319,19 @@ class _ParticipantsViewAllBottomSheetState
     context.read<MeetingStore>().enableRefresh();
   }
 
+  String roleNameTranslation(roleName) {
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participant" || roleName == "Participant") {
+      return t.participants;
+    }
+    return roleName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -392,7 +405,8 @@ class _ParticipantsViewAllBottomSheetState
                                             horizontal: 16.0, vertical: 12),
                                         child: HMSSubheadingText(
                                           fontWeight: FontWeight.w600,
-                                          text: widget.role,
+                                          text:
+                                              roleNameTranslation(widget.role),
                                           textColor: HMSThemeColors
                                               .onSurfaceMediumEmphasis,
                                           letterSpacing: 0.1,
