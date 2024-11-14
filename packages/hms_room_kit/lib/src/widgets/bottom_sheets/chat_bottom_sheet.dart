@@ -2,6 +2,7 @@ library;
 
 //Package imports
 import 'package:flutter/material.dart';
+import 'package:hms_room_kit/i18n/strings.g.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:tuple/tuple.dart';
@@ -64,13 +65,24 @@ class _ChatBottomSheetState extends State<ChatBottomSheet> {
   void setRecipientChipValue() {
     dynamic currentValue = context.read<MeetingStore>().recipientSelectorValue;
     if (currentValue is HMSPeer) {
-      currentlySelectedValue = currentValue.name;
+      currentlySelectedValue = setCurrentValueTranslation(currentValue.name);
       currentlySelectedpeerId = currentValue.peerId;
     } else if (currentValue is HMSRole) {
-      currentlySelectedValue = currentValue.name;
+      currentlySelectedValue = setCurrentValueTranslation(currentValue.name);
     } else if (currentValue is String) {
-      currentlySelectedValue = currentValue;
+      currentlySelectedValue = setCurrentValueTranslation(currentValue);
     }
+  }
+
+  String setCurrentValueTranslation(String currentValue) {
+    if (currentValue == "everyone" || currentValue == "Everyone") {
+      return t.everyone;
+    } else if (currentValue == "host" || currentValue == "Host") {
+      return t.host;
+    } else if (currentValue == "guest" || currentValue == "Guest") {
+      return t.guest;
+    }
+    return currentValue;
   }
 
   void sendMessage(TextEditingController messageTextController) async {
