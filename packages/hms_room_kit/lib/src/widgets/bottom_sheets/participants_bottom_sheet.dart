@@ -69,6 +69,19 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
     );
   }
 
+  String roleNameTranslation(roleName) {
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participant" || roleName == "Participant") {
+      return t.participants;
+    }
+    return roleName;
+  }
+
   Widget _kebabMenu(HMSPeer peer) {
     final meetingStore = context.read<MeetingStore>();
     PeerTrackNode? peerTrackNode;
@@ -398,7 +411,7 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                                             .onSurfaceHighEmphasis,
                                         title: HMSSubheadingText(
                                           text:
-                                              "${context.read<MeetingStore>().participantsInMeetingMap.keys.elementAt(index)} (${((HMSRoomLayout.offStageRoles?.contains(role) ?? false) && isLargeRoom) ? context.read<MeetingStore>().peerListIterators[role]?.totalCount ?? 0 : participantsPerRole.item1}) ",
+                                              "${roleNameTranslation(context.read<MeetingStore>().participantsInMeetingMap.keys.elementAt(index))} (${((HMSRoomLayout.offStageRoles?.contains(role) ?? false) && isLargeRoom) ? context.read<MeetingStore>().peerListIterators[role]?.totalCount ?? 0 : participantsPerRole.item1}) ",
                                           textColor: HMSThemeColors
                                               .onSurfaceMediumEmphasis,
                                           letterSpacing: 0.1,

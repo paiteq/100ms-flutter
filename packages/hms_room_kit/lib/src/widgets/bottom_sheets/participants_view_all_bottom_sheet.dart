@@ -405,8 +405,7 @@ class _ParticipantsViewAllBottomSheetState
                                             horizontal: 16.0, vertical: 12),
                                         child: HMSSubheadingText(
                                           fontWeight: FontWeight.w600,
-                                          text:
-                                              roleNameTranslation(widget.role),
+                                          text: widget.role,
                                           textColor: HMSThemeColors
                                               .onSurfaceMediumEmphasis,
                                           letterSpacing: 0.1,
