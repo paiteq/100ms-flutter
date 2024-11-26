@@ -49,6 +49,19 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
     super.deactivate();
   }
 
+  String roleName({required String roleName}) {
+    if (roleName == "everyone" || roleName == "Everyone") {
+      return t.everyone;
+    } else if (roleName == "host" || roleName == "Host") {
+      return t.host;
+    } else if (roleName == "guest" || roleName == "Guest") {
+      return t.guest;
+    } else if (roleName == "participant" || roleName == "Participant") {
+      return t.participants;
+    }
+    return roleName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
@@ -80,8 +93,10 @@ class _LocalPeerBottomSheetState extends State<LocalPeerBottomSheet> {
                             height: 5,
                           ),
                           HMSSubtitleText(
-                              text: widget.meetingStore.localPeer?.role.name ??
-                                  "",
+                              text: roleName(
+                                  roleName: widget
+                                          .meetingStore.localPeer?.role.name ??
+                                      ""),
                               textColor: HMSThemeColors.onSurfaceMediumEmphasis)
                         ],
                       ),

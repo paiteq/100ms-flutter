@@ -79,7 +79,7 @@ class _PollQuizFormState extends State<PollQuizForm> {
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                 fillColor: HMSThemeColors.surfaceDefault,
                 filled: true,
-                hintText: widget.isPoll ? t.name_this_poll : t.name_this_poll,
+                hintText: widget.isPoll ? t.name_this_poll : t.name_this_quiz,
                 hintStyle: HMSTextStyle.setTextStyle(
                     color: HMSThemeColors.onSurfaceLowEmphasis,
                     height: 1.5,
