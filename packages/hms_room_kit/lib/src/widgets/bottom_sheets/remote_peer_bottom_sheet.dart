@@ -231,7 +231,7 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                         ),
                         title: HMSSubheadingText(
                             text:
-                                "${t.video} ${(widget.peerTrackNode.track?.isMute ?? true) ? t.on : t.off}",
+                                "${t.camera} ${(widget.peerTrackNode.track?.isMute ?? true) ? t.on : t.off}",
                             textColor: widget.peerTrackNode.track == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
