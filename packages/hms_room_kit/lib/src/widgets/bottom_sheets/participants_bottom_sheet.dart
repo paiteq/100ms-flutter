@@ -304,8 +304,11 @@ class _ParticipantsBottomSheetState extends State<ParticipantsBottomSheet> {
                           width: 8,
                         ),
                         HMSTitleText(
-                          text:
-                              "${t.microphone} ${peerTrackNode.audioTrack?.isMute ?? false ? t.on : t.off}",
+                          // text:
+                          //     "${t.microphone} ${peerTrackNode.audioTrack?.isMute ?? false ? t.on : t.off}",
+                          text: (peerTrackNode.audioTrack?.isMute ?? true)
+                              ? "${t.microphone} ${t.on}"
+                              : t.mute_audio,
                           textColor: HMSThemeColors.onSurfaceHighEmphasis,
                           fontSize: 14,
                           lineHeight: 20,

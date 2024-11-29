@@ -198,8 +198,12 @@ class _RemotePeerBottomSheetState extends State<RemotePeerBottomSheet> {
                               BlendMode.srcIn),
                         ),
                         title: HMSSubheadingText(
-                            text:
-                                "${t.microphone} ${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.on : t.off}",
+                            // text:
+                            //     "${t.microphone} ${(widget.peerTrackNode.audioTrack?.isMute ?? true) ? t.on : t.off}",
+                            text: (widget.peerTrackNode.audioTrack?.isMute ??
+                                    true)
+                                ? "${t.microphone} ${t.on}"
+                                : t.mute_audio,
                             textColor: widget.peerTrackNode.audioTrack == null
                                 ? HMSThemeColors.onSurfaceLowEmphasis
                                 : HMSThemeColors.onSurfaceHighEmphasis)),
